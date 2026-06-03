@@ -528,27 +528,29 @@
       </div>
     </section>
 
-    <!-- Quote & Contact section (B2B lead generation) -->
+    <!-- Quote & Contact section (B2B lead generation) - UPDATED WITH FORMSUBMIT -->
     <section id="contact">
       <div class="container">
         <h2 class="section-title text-center">Request a volume quote</h2>
         <p class="section-sub text-center">Tell us about your custom mylar bag requirements — we’ll respond with factory-direct prices within 12 hours.</p>
         <div class="contact-wrapper">
-          <form id="b2bForm" action="#" method="post">
+          <form action="https://formsubmit.co/cannalock.procurement@protonmail.com" method="POST" id="b2bForm">
+            <input type="hidden" name="_subject" value="New quote request from CannaLock website">
+            <input type="hidden" name="_captcha" value="false">
             <div class="form-grid">
-              <div><input type="text" placeholder="Full name *" id="name" required></div>
-              <div><input type="email" placeholder="Business email *" id="email" required></div>
-              <div><input type="text" placeholder="Company name" id="company"></div>
-              <div><select id="productInterest">
+              <div><input type="text" name="name" placeholder="Full name *" required></div>
+              <div><input type="email" name="email" placeholder="Business email *" required></div>
+              <div><input type="text" name="company" placeholder="Company name"></div>
+              <div><select name="product_interest">
                 <option value="">Select packaging type</option>
                 <option>Food-grade mylar bags</option>
                 <option>Fruit preservation pouches</option>
                 <option>Cannabis child-resistant bags</option>
                 <option>Custom printed rolls / Stand-up pouches</option>
               </select></div>
-              <div style="grid-column: span 2;"><textarea rows="3" placeholder="Describe quantity, size, custom artwork or special requirements..."></textarea></div>
+              <div style="grid-column: span 2;"><textarea name="message" rows="3" placeholder="Describe quantity, size, custom artwork or special requirements..."></textarea></div>
             </div>
-            <div class="text-center mt-4"><button type="submit" class="btn-primary" style="font-size: 1rem;"><i class="fas fa-paper-plane"></i> Submit B2B inquiry</button></div>
+            <div class="text-center mt-4"><button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Submit B2B inquiry</button></div>
             <p class="text-center" style="margin-top: 24px; font-size: 0.85rem;"><i class="fas fa-shield-alt"></i> Your information is secure — we never disclose our supply sources.</p>
           </form>
         </div>
@@ -592,27 +594,7 @@
   </footer>
 
   <script>
-    // Simple form handling with validation + show success message (demo)
-    const form = document.getElementById('b2bForm');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('name')?.value.trim();
-        const email = document.getElementById('email')?.value.trim();
-        if (!name || !email) {
-          alert('Please enter your name and business email to receive B2B pricing.');
-          return;
-        }
-        if (!email.includes('@')) {
-          alert('Please provide a valid business email address.');
-          return;
-        }
-        alert(`✓ Thank you ${name}! Your custom packaging inquiry has been sent.\nOur sourcing team will contact you within 12h with factory-direct quotes.`);
-        form.reset();
-      });
-    }
-
-    // smooth scroll for anchor links
+    // smooth scroll for anchor links (no alert on form submit, FormSubmit handles it)
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -626,4 +608,5 @@
     });
   </script>
 </body>
+</html>
 </html>
