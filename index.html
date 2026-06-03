@@ -33,8 +33,8 @@
     .hero-content p { font-size: 1.1rem; color: var(--text-muted); margin-bottom: 32px; }
     .hero-stats { display: flex; gap: 32px; margin-top: 40px; }
     .stat-item h3 { font-size: 1.7rem; font-weight: 800; color: var(--primary); }
-    .hero-image { flex: 1; background: #e4efdf; border-radius: 36px; padding: 40px 20px; text-align: center; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1); }
-    .hero-image i { font-size: 8rem; color: var(--primary-dark); }
+    .hero-image { flex: 1; background: #e4efdf; border-radius: 36px; padding: 20px; text-align: center; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1); }
+    .hero-image img { max-width: 100%; border-radius: 24px; max-height: 300px; object-fit: cover; }
     .trust-badges { display: flex; justify-content: center; gap: 40px; flex-wrap: wrap; margin: 40px 0; }
     .trust-badge { display: flex; align-items: center; gap: 12px; background: white; padding: 8px 20px; border-radius: 100px; border: 1px solid var(--gray-border); box-shadow: 0 2px 5px rgba(0,0,0,0.02); }
     .trust-badge i { font-size: 1.6rem; color: var(--accent-gold); }
@@ -44,19 +44,11 @@
     .service-card:hover { transform: translateY(-6px); border-color: var(--primary); box-shadow: 0 12px 24px rgba(0,0,0,0.05); }
     .service-card i { font-size: 2.8rem; color: var(--primary); margin-bottom: 20px; }
     .service-card h3 { font-size: 1.5rem; margin-bottom: 12px; }
-    .card-expand { background: #f9faf7; border-radius: 28px; margin-top: 12px; padding: 24px; display: none; border: 1px solid var(--gray-border); border-top: 3px solid var(--primary); }
-    .card-expand.show { display: block; animation: fadeIn 0.3s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
-    .expand-content { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
-    .expand-visual { flex: 1; text-align: center; background: #eef3ea; border-radius: 32px; padding: 20px; }
-    .expand-visual img { max-width: 100%; border-radius: 24px; max-height: 180px; object-fit: cover; }
-    .expand-text { flex: 2; }
-    .expand-text ul { margin-left: 20px; margin-top: 8px; }
-    .expand-text li { margin: 8px 0; }
-    .close-expand { background: none; border: none; font-size: 1.2rem; cursor: pointer; float: right; color: var(--text-muted); }
-    .steps-grid { display: flex; gap: 24px; flex-wrap: wrap; justify-content: space-between; margin: 40px 0; }
-    .step-item { flex: 1; background: white; border-radius: 28px; padding: 28px 20px; text-align: center; border: 1px solid var(--gray-border); }
-    .step-number { background: var(--primary); width: 48px; height: 48px; border-radius: 60px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 800; margin-bottom: 20px; }
+    .feature-grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; margin: 40px 0; }
+    .feature-image img { max-width: 100%; border-radius: 32px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
+    .image-gallery { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin: 40px 0; }
+    .gallery-item { flex: 1; min-width: 200px; background: white; border-radius: 24px; padding: 16px; text-align: center; border: 1px solid var(--gray-border); }
+    .gallery-item img { max-width: 100%; border-radius: 16px; height: 160px; object-fit: cover; }
     .spec-builder { background: var(--gray-light); border-radius: 48px; padding: 48px; margin-top: 20px; box-shadow: 0 12px 30px rgba(0,0,0,0.03); }
     .builder-step { margin-bottom: 40px; border-bottom: 1px solid #e2e8e4; padding-bottom: 32px; }
     .builder-step h3 { font-size: 1.4rem; margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
@@ -80,7 +72,7 @@
     .modal-content { background-color: white; margin: 10% auto; padding: 32px; border-radius: 32px; max-width: 500px; }
     footer { background: #121c14; color: #cbdcc4; padding: 48px 0 24px; }
     .footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 40px; }
-    @media (max-width: 768px) { .container { padding: 0 20px; } .hero-content h1 { font-size: 2.3rem; } .form-grid { grid-template-columns: 1fr; } .spec-builder { padding: 24px; } .expand-content { flex-direction: column; } }
+    @media (max-width: 768px) { .container { padding: 0 20px; } .hero-content h1 { font-size: 2.3rem; } .form-grid { grid-template-columns: 1fr; } .spec-builder { padding: 24px; } .feature-grid-2col { grid-template-columns: 1fr; } }
     .text-center { text-align: center; }
     .mt-4 { margin-top: 24px; }
     .text-muted { color: var(--text-muted); }
@@ -89,72 +81,77 @@
 <body>
 <nav class="navbar"><div class="container nav-flex"><div class="logo"><h1>CannaLock<span>Packaging Global</span></h1></div><div class="nav-links"><a href="#home">Home</a><a href="#products">Packaging</a><a href="#sourcing">Sourcing</a><a href="#quote">Quote Builder</a><a href="#" class="btn-outline" style="padding: 8px 20px;"><i class="fas fa-globe"></i> B2B Portal</a></div></div></nav>
 
-<section id="home" class="hero"><div class="container hero-grid"><div class="hero-content"><div class="hero-badge"><i class="fas fa-shield-alt"></i> USA Compliant & Wholesale Pricing</div><h1>Custom Mylar Bags <br> At Factory‑Direct Prices</h1><p>Premium packaging for food, fruits & cannabis. Save 30‑40% with our confidential global sourcing. ISO & FDA certified materials, child‑resistant options, full customization.</p><div class="trust-badges" style="justify-content: flex-start; margin: 20px 0;"><div class="trust-badge"><i class="fas fa-certificate"></i> ISO 9001</div><div class="trust-badge"><i class="fas fa-apple-alt"></i> Food Grade</div><div class="trust-badge"><i class="fas fa-lock"></i> Child‑Resistant</div><div class="trust-badge" style="background: #f0f9f0;"><i class="fas fa-star"></i> ★ 4.9 (500+ reviews)</div></div><div class="urgent-banner"><i class="fas fa-gift" style="color:#e67e22;"></i> <strong>Limited offer:</strong> Free sample pack on first B2B order &nbsp;|&nbsp; <i class="fas fa-clock"></i> Quote in 12h</div><a href="#quote" class="btn-primary"><i class="fas fa-cogs"></i> Get Your Quote →</a><div class="hero-stats"><div class="stat-item"><h3>500+</h3><p>B2B Clients</p></div><div class="stat-item"><h3>12M+</h3><p>Bags Shipped</p></div><div class="stat-item"><h3>98%</h3><p>On‑Time Delivery</p></div></div></div><div class="hero-image"><i class="fas fa-boxes-packaging"></i><i class="fas fa-lock" style="font-size: 3rem; margin-left: 15px;"></i></div></div></section>
+<section id="home" class="hero"><div class="container hero-grid"><div class="hero-content"><div class="hero-badge"><i class="fas fa-shield-alt"></i> USA Compliant & Wholesale Pricing</div><h1>Custom Mylar Bags <br> At Factory‑Direct Prices</h1><p>Premium packaging for food, fruits & cannabis. Save 30‑40% with our confidential global sourcing. ISO & FDA certified materials, child‑resistant options, full customization.</p><div class="trust-badges" style="justify-content: flex-start; margin: 20px 0;"><div class="trust-badge"><i class="fas fa-certificate"></i> ISO 9001</div><div class="trust-badge"><i class="fas fa-apple-alt"></i> Food Grade</div><div class="trust-badge"><i class="fas fa-lock"></i> Child‑Resistant</div><div class="trust-badge" style="background: #f0f9f0;"><i class="fas fa-star"></i> ★ 4.9 (500+ reviews)</div></div><div class="urgent-banner"><i class="fas fa-gift" style="color:#e67e22;"></i> <strong>Limited offer:</strong> Free sample pack on first B2B order &nbsp;|&nbsp; <i class="fas fa-clock"></i> Quote in 12h</div><a href="#quote" class="btn-primary"><i class="fas fa-cogs"></i> Get Your Quote →</a><div class="hero-stats"><div class="stat-item"><h3>500+</h3><p>B2B Clients</p></div><div class="stat-item"><h3>12M+</h3><p>Bags Shipped</p></div><div class="stat-item"><h3>98%</h3><p>On‑Time Delivery</p></div></div></div><div class="hero-image"><img src="gpt-image-2_Commercial_product_photograph..." alt="Premium mylar bag packaging" onerror="this.src='https://placehold.co/600x400?text=Mylar+Bag'"></div></div></section>
 
-<!-- Trusted brands strip using AI image -->
-<section><div class="container"><div style="text-align: center; margin: 20px 0;"><p style="font-weight: 600; margin-bottom: 16px;">Trusted by top cannabis & food brands</p><img src="final strains.png" alt="Trusted brands collage" style="max-width: 100%; border-radius: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.05);"></div></div></section>
+<!-- Trusted brands strip -->
+<section><div class="container"><div style="text-align: center; margin: 20px 0;"><p style="font-weight: 600; margin-bottom: 16px;">Trusted by top cannabis & food brands</p><img src="final strains.png" alt="Trusted brands collage" style="max-width: 100%; border-radius: 28px;"></div></div></section>
 
-<!-- Interactive packaging solutions section with images -->
+<!-- Premium material construction -->
+<section style="background: #fefcf7;"><div class="container"><div class="feature-grid-2col"><div class="feature-image"><img src="mylar layers.png" alt="Mylar layer structure"></div><div><h3><i class="fas fa-layer-group"></i> Premium material construction</h3><p>Every bag is engineered for maximum protection:</p><ul><li><strong>Matte Charcoal PET</strong> – dimensional stability, soft‑touch finish, high‑resolution print surface.</li><li><strong>High‑Barrier Aluminum Foil Core</strong> – blocks oxygen, moisture, light, and gases.</li><li><strong>Transparent Inner Sealant (PP/PE)</strong> – heat‑sealable, food‑contact safe, laminated for stability.</li></ul></div></div></div></section>
+
+<!-- Gallery of packaging options (variety2.png, 50bag.jpg, strains.png) -->
+<section><div class="container"><h2 class="section-title text-center">Packaging varieties & strain-specific designs</h2><div class="image-gallery"><div class="gallery-item"><img src="variety2.png" alt="Variety of mylar bags"><p>Multiple bag styles</p></div><div class="gallery-item"><img src="50bag.jpg" alt="50g mylar bag example"><p>50g / 1.76oz size</p></div><div class="gallery-item"><img src="strains.png" alt="Cannabis strain labels"><p>Strain-specific branding</p></div></div></div></section>
+
+<!-- Child-Resistant Integrity System -->
+<section><div class="container"><div class="feature-grid-2col" style="direction: rtl;"><div class="feature-image"><img src="mylar seal.png" alt="Child Resistant Integrity System"></div><div style="direction: ltr;"><h3><i class="fas fa-lock"></i> Child‑Resistant Integrity System (CRIS)</h3><p>Our patented press‑and‑pull zipper technology meets the highest safety standards.</p><ul><li>✅ Certified child‑resistant (16 CFR 1700)</li><li>✅ Senior‑friendly & easy to open for adults</li><li>✅ Tamper‑evident & smell‑proof seal</li></ul><a href="#quote" class="btn-outline" style="margin-top: 16px; display: inline-block;">Add CRIS to your order →</a></div></div></div></section>
+
+<!-- Interactive packaging solutions (simplified) -->
 <section id="products"><div class="container"><h2 class="section-title text-center">Complete packaging solutions</h2><div class="cards-grid" id="solutionsGrid">
-  <!-- Card 1: Food & Snacks -->
   <div class="service-card" data-card="food"><i class="fas fa-apple-alt"></i><h3>Food & Snacks</h3><p>Oxygen barrier, resealable zippers.</p></div>
-  <div class="card-expand" id="expand-food"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><img src="https://images.pexels.com/photos/461428/coffee-bag-coffee-beans-coffee-package-461428.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Coffee beans in mylar bag"><br><i class="fas fa-box-open" style="font-size: 1.5rem; margin-top: 8px;"></i><a href="#quote" class="btn-outline" style="margin-top: 12px; display: block; text-align: center;">Get a Quote →</a></div><div class="expand-text"><h4>🍿 Preserve freshness & flavor</h4><ul><li>High-barrier protection against moisture & oxygen</li><li>Resealable zippers for repeated use</li><li>Custom printing with vibrant brand colors</li><li>Ideal for coffee, nuts, trail mix, protein powder</li><li>Available in stand-up pouches or flat bags</li></ul><p style="margin-top: 12px;"><strong>Why customers choose us:</strong> Fast turnaround, low MOQ, and free design support.</p><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Request food bag quote →</a></div></div><div style="margin-top: 20px;"><img src="mylar layers.png" alt="Mylar layer structure" style="max-width: 100%; border-radius: 20px;"></div></div>
-
-  <!-- Card 2: Fruit Preservation -->
   <div class="service-card" data-card="fruit"><i class="fas fa-fruit-apple"></i><h3>Fruit Preservation</h3><p>Micro‑perforated, extended shelf life.</p></div>
-  <div class="card-expand" id="expand-fruit"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><img src="https://images.pexels.com/photos/1191409/berries-fruit-bowl-fresh-1191409.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Fresh berries in breathable pouch"><br><i class="fas fa-leaf" style="font-size: 1.5rem;"></i><a href="#quote" class="btn-outline" style="margin-top: 12px; display: block; text-align: center;">Get a Quote →</a></div><div class="expand-text"><h4>🍓 Keep produce fresher longer</h4><ul><li>Micro-perforation technology for optimal airflow</li><li>Moisture control liners prevent sogginess</li><li>Extends shelf life of berries, cherries, cut vegetables</li><li>Custom sizes for clamshells or stand-up pouches</li><li>Food-safe, BPA-free materials</li></ul><p style="margin-top: 12px;"><strong>Why customers choose us:</strong> Fast turnaround, low MOQ, and free design support.</p><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Request fruit packaging →</a></div></div></div>
-
-  <!-- Card 3: Cannabis Packaging -->
   <div class="service-card" data-card="cannabis"><i class="fas fa-leaf"></i><h3>Cannabis Packaging</h3><p>Child‑resistant, smell‑proof, UV.</p></div>
-  <div class="card-expand" id="expand-cannabis"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><img src="https://images.pexels.com/photos/2623168/close-up-of-a-cannabis-bud-2623168.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Cannabis flower in child-resistant bag"><br><i class="fas fa-lock" style="font-size: 1.5rem;"></i><a href="#quote" class="btn-outline" style="margin-top: 12px; display: block; text-align: center;">Get a Quote →</a></div><div class="expand-text"><h4>🌿 Compliant, discreet & secure</h4><ul><li>Certified child-resistant zippers & tear notches</li><li>Smell-proof and UV-resistant layers</li><li>Available in exit bags, mylar pouches, and custom shapes</li><li>Full compliance with state regulations</li><li>Custom branding for dispensaries and brands</li></ul><p style="margin-top: 12px;"><strong>Why customers choose us:</strong> Fast turnaround, low MOQ, and free design support.</p><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Explore cannabis options →</a></div></div><div style="margin-top: 20px; text-align: center;"><img src="mylar seal.png" alt="Child Resistant Integrity System" style="max-width: 80%; border-radius: 20px;"></div></div>
-
-  <!-- Card 4: Full Customization -->
   <div class="service-card" data-card="custom"><i class="fas fa-palette"></i><h3>Full Customization</h3><p>Matte/gloss/metallic, low MOQ.</p></div>
-  <div class="card-expand" id="expand-custom"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><img src="https://images.pexels.com/photos/4483807/custom-printed-bags-4483807.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Custom printed packaging samples"><br><i class="fas fa-paint-brush" style="font-size: 1.5rem;"></i><a href="#quote" class="btn-outline" style="margin-top: 12px; display: block; text-align: center;">Get a Quote →</a></div><div class="expand-text"><h4>✨ Your brand, your way</h4><ul><li>Full-color digital printing – no setup fees</li><li>Matte, gloss, or metallic finishes</li><li>Low minimum order quantity (MOQ) – as low as 3,000 units</li><li>Add hang holes, gussets, windows, and more</li><li>Free design support & pre-production samples</li></ul><p style="margin-top: 12px;"><strong>Why customers choose us:</strong> Fast turnaround, low MOQ, and free design support.</p><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Start your custom project →</a></div></div></div>
-</div></div></section>
+</div>
+<div id="expand-food" class="card-expand"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-text"><h4>🍿 Preserve freshness & flavor</h4><ul><li>High-barrier protection</li><li>Resealable zippers</li><li>Custom printing</li></ul><a href="#quote" class="btn-outline">Request food bag quote →</a></div></div></div>
+<div id="expand-fruit" class="card-expand"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-text"><h4>🍓 Keep produce fresher longer</h4><ul><li>Micro-perforation</li><li>Moisture control</li><li>Extended shelf life</li></ul><a href="#quote" class="btn-outline">Request fruit packaging →</a></div></div></div>
+<div id="expand-cannabis" class="card-expand"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><img src="image_33015bfc.png" alt="Cannabis mylar bag" style="max-width: 100%; border-radius: 20px; max-height: 150px;"></div><div class="expand-text"><h4>🌿 Compliant, discreet & secure</h4><ul><li>Child-resistant zippers</li><li>Smell-proof & UV</li><li>Custom branding</li></ul><a href="#quote" class="btn-outline">Explore cannabis options →</a></div></div></div>
+<div id="expand-custom" class="card-expand"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-text"><h4>✨ Your brand, your way</h4><ul><li>Full-color digital printing</li><li>Matte/gloss/metallic</li><li>Low MOQ</li></ul><a href="#quote" class="btn-outline">Start your custom project →</a></div></div></div>
+</div></section>
 
 <section id="sourcing" style="background: #fefcf7;"><div class="container"><h2 class="section-title text-center">How we deliver premium packaging</h2><div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: space-between; margin: 40px 0;"><div class="step-item"><div class="step-number">1</div><h3>Share specs</h3><p>Via our easy builder.</p></div><div class="step-item"><div class="step-number">2</div><h3>Samples & approval</h3><p>Proof + sample in 7 days.</p></div><div class="step-item"><div class="step-number">3</div><h3>Bulk production</h3><p>Low MOQ, strict QC.</p></div><div class="step-item"><div class="step-number">4</div><h3>Global delivery</h3><p>Sea/air, door‑to‑door.</p></div></div></div></section>
 
+<!-- Size guide with mylar sizes.png -->
+<section><div class="container"><div class="feature-grid-2col"><div class="feature-image"><img src="mylar sizes.png" alt="Mylar bag size chart"></div><div><h3><i class="fas fa-chart-line"></i> Common pouch sizes (grams to ounces)</h3><ul><li>1g (0.035oz) – Sample / single serving</li><li>3.5g (1/8 oz) – Most popular for cannabis flower</li><li>7g (1/4 oz) – Standard “quarter”</li><li>14g (1/2 oz) – Bulk personal use</li><li>28g (1 oz) – Maximum retail size</li><li>50g (1.76 oz) – Food & snack size (see product image)</li><li>Custom – Tell us your exact dimensions</li></ul><p class="text-muted">For food: common sizes are 4x6”, 5x7”, 6x9”, 8x10”.</p></div></div></div></section>
+
 <section id="quote"><div class="container"><h2 class="section-title text-center">Design your custom mylar bags</h2><p class="section-sub text-center">Select your preferences – we’ll provide an exact quote within 12 hours.</p><div class="spec-builder"><div id="form-error-summary" class="error-summary"></div>
 <form action="https://formsubmit.co/cannalock.procurement@protonmail.com" method="POST" id="quoteForm">
-  <input type="hidden" name="_subject" value="Detailed custom packaging quote request (with size presets)">
+  <input type="hidden" name="_subject" value="Detailed custom packaging quote request">
   <input type="hidden" name="_captcha" value="false">
   <input type="hidden" name="_autoresponse" value="Thank you for your detailed specs! We'll reply with pricing within 12 hours. - CannaLock Packaging Global">
   <input type="hidden" name="_next" value="https://Cannalock-packaging.github.io/-cannalock-website/thankyou.html">
 
   <div class="builder-step"><h3><i class="fas fa-layer-group"></i> 1. Material & Thickness</h3><div class="option-group" id="thickness-group"><div class="option-card" data-value="3mil">3mil Standard</div><div class="option-card" data-value="4mil">4mil Heavy Duty <span class="most-ordered">most ordered</span></div><div class="option-card" data-value="5mil">5mil Premium</div><div class="option-card" data-value="6mil">6mil Ultra Strong</div></div><input type="hidden" name="thickness" id="thickness" required></div>
 
-  <div class="builder-step"><h3><i class="fas fa-paint-roller"></i> 2. Finish</h3><div class="option-group" id="finish-group"><div class="option-card" data-value="Matte">Matte (non‑glare)</div><div class="option-card" data-value="Gloss">Gloss (shiny)</div><div class="option-card" data-value="Metallic">Metallic (premium) <span class="most-ordered">trending</span></div></div><input type="hidden" name="finish" id="finish" required></div>
+  <div class="builder-step"><h3><i class="fas fa-paint-roller"></i> 2. Finish</h3><div class="option-group" id="finish-group"><div class="option-card" data-value="Matte">Matte</div><div class="option-card" data-value="Gloss">Gloss</div><div class="option-card" data-value="Metallic">Metallic <span class="most-ordered">trending</span></div></div><input type="hidden" name="finish" id="finish" required></div>
 
-  <div class="builder-step"><h3><i class="fas fa-lock"></i> 3. Closure Type</h3><div class="option-group" id="closure-group"><div class="option-card" data-value="Resealable zipper">Resealable Zipper</div><div class="option-card" data-value="Child-resistant zipper">Child‑Resistant Zipper <span class="most-ordered">top for cannabis</span></div><div class="option-card" data-value="Tear notch">Tear Notch (single use)</div><div class="option-card" data-value="Heat seal">Heat Seal (flat bottom)</div></div><input type="hidden" name="closure" id="closure" required></div>
+  <div class="builder-step"><h3><i class="fas fa-lock"></i> 3. Closure Type</h3><div class="option-group" id="closure-group"><div class="option-card" data-value="Resealable zipper">Resealable Zipper</div><div class="option-card" data-value="Child-resistant zipper">Child‑Resistant Zipper <span class="most-ordered">top for cannabis</span></div><div class="option-card" data-value="Tear notch">Tear Notch</div><div class="option-card" data-value="Heat seal">Heat Seal</div></div><input type="hidden" name="closure" id="closure" required></div>
 
-  <div class="builder-step"><h3><i class="fas fa-print"></i> 4. Printing</h3><div class="option-group" id="printing-group"><div class="option-card" data-value="No printing">No printing (plain)</div><div class="option-card" data-value="1-2 colors">1‑2 colors (spot)</div><div class="option-card" data-value="Full color CMYK">Full color CMYK <span class="most-ordered">best for branding</span></div></div><input type="hidden" name="printing" id="printing" required></div>
+  <div class="builder-step"><h3><i class="fas fa-print"></i> 4. Printing</h3><div class="option-group" id="printing-group"><div class="option-card" data-value="No printing">No printing</div><div class="option-card" data-value="1-2 colors">1‑2 colors</div><div class="option-card" data-value="Full color CMYK">Full color CMYK <span class="most-ordered">best for branding</span></div></div><input type="hidden" name="printing" id="printing" required></div>
 
-  <div class="builder-step"><h3><i class="fas fa-weight-hanging"></i> 5. Pouch Size (pick one)</h3><div class="size-grid" id="size-grid-group">
-    <div class="size-card" data-size="1g (0.035oz)"><div class="size-name">1g</div><div class="size-desc">~0.035 oz</div></div>
-    <div class="size-card" data-size="2g (0.07oz)"><div class="size-name">2g</div><div class="size-desc">~0.07 oz</div></div>
-    <div class="size-card" data-size="3.5g (1/8 oz)"><div class="size-name">3.5g (1/8 oz)</div><div class="size-desc">most popular</div><span class="most-ordered">⭐</span></div>
-    <div class="size-card" data-size="7g (1/4 oz)"><div class="size-name">7g (1/4 oz)</div><div class="size-desc">~0.25 oz</div></div>
-    <div class="size-card" data-size="14g (1/2 oz)"><div class="size-name">14g (1/2 oz)</div><div class="size-desc">~0.5 oz</div></div>
-    <div class="size-card" data-size="28g (1 oz)"><div class="size-name">28g (1 oz)</div><div class="size-desc">standard ounce</div></div>
-    <div class="size-card" data-size="Custom size"><div class="size-name">Custom</div><div class="size-desc">enter below</div></div>
+  <div class="builder-step"><h3><i class="fas fa-weight-hanging"></i> 5. Pouch Size</h3><div class="size-grid" id="size-grid-group">
+    <div class="size-card" data-size="1g"><div class="size-name">1g</div><div class="size-desc">~0.035 oz</div></div>
+    <div class="size-card" data-size="3.5g"><div class="size-name">3.5g (1/8 oz)</div><div class="size-desc">most popular</div><span class="most-ordered">⭐</span></div>
+    <div class="size-card" data-size="7g"><div class="size-name">7g (1/4 oz)</div></div>
+    <div class="size-card" data-size="14g"><div class="size-name">14g (1/2 oz)</div></div>
+    <div class="size-card" data-size="28g"><div class="size-name">28g (1 oz)</div></div>
+    <div class="size-card" data-size="50g"><div class="size-name">50g (1.76 oz)</div></div>
+    <div class="size-card" data-size="Custom"><div class="size-name">Custom</div><div class="size-desc">enter below</div></div>
   </div>
   <input type="hidden" name="size_preset" id="size_preset" required>
-  <div id="custom-size-container" style="margin-top: 16px; display: none;"><input type="text" name="custom_size" id="custom_size" placeholder="Enter custom dimensions (e.g., 6x9 inches or 50g)"></div>
-  <p class="text-muted" style="margin-top: 12px;"><i class="fas fa-chart-simple"></i> <a href="#" id="sizeGuideLink" style="color: var(--primary);">Need help choosing a size? See our detailed guide →</a></p>
+  <div id="custom-size-container" style="margin-top: 16px; display: none;"><input type="text" name="custom_size" id="custom_size" placeholder="Enter custom dimensions (e.g., 6x9 inches or 100g)"></div>
   </div>
 
   <div class="builder-step"><h3><i class="fas fa-chart-line"></i> 6. Estimated Quantity</h3><select name="quantity_range" id="quantity_range" required style="max-width: 300px;"><option value="">Select quantity *</option><option>1,000 - 5,000 bags</option><option>5,001 - 10,000 bags <span class="most-ordered">(most B2B orders)</span></option><option>10,001 - 25,000 bags</option><option>25,001 - 50,000 bags</option><option>50,001+ bags</option></select></div>
 
-  <div class="builder-step"><h3><i class="fas fa-plus-circle"></i> 7. Add‑ons (optional)</h3><div class="option-group" id="addons-group"><div class="option-card" data-value="Hang hole">Hang hole</div><div class="option-card" data-value="Gusset bottom">Gusset bottom (stand‑up)</div><div class="option-card" data-value="Clear window">Clear window</div><div class="option-card" data-value="Smell-proof layer">Smell‑proof layer <span class="most-ordered">cannabis essential</span></div></div><input type="hidden" name="addons" id="addons" value=""><p class="text-muted">Selected: <span id="addons-selected">none</span></p></div>
+  <div class="builder-step"><h3><i class="fas fa-plus-circle"></i> 7. Add‑ons</h3><div class="option-group" id="addons-group"><div class="option-card" data-value="Hang hole">Hang hole</div><div class="option-card" data-value="Gusset bottom">Gusset bottom</div><div class="option-card" data-value="Clear window">Clear window</div><div class="option-card" data-value="Smell-proof layer">Smell‑proof layer</div></div><input type="hidden" name="addons" id="addons" value=""><p class="text-muted">Selected: <span id="addons-selected">none</span></p></div>
 
   <div class="summary-box"><strong>✨ Your custom specs summary:</strong><br>
   Thickness: <span id="sum-thickness">—</span> | Finish: <span id="sum-finish">—</span> | Closure: <span id="sum-closure">—</span> | Printing: <span id="sum-printing">—</span><br>
   Size: <span id="sum-size">—</span> | Quantity: <span id="sum-qty">—</span> | Add‑ons: <span id="sum-addons">—</span>
-  <div style="margin-top: 12px;"><button type="button" id="copySummaryBtn" class="btn-outline" style="padding: 5px 15px; font-size:0.8rem;"><i class="fas fa-copy"></i> Copy summary</button></div>
+  <div><button type="button" id="copySummaryBtn" class="btn-outline" style="margin-top: 12px; padding: 5px 15px;"><i class="fas fa-copy"></i> Copy summary</button></div>
   </div>
 
-  <div class="guarantee"><i class="fas fa-medal" style="font-size: 2rem; color: var(--accent-gold);"></i><br><strong>100% Satisfaction Guarantee</strong><br>If you're not happy with the quality, we'll remake your order or refund – no questions asked.<br><span style="font-size:0.85rem;">🔥 Over 500+ B2B clients trust us. Join them today.</span></div>
+  <div class="guarantee"><i class="fas fa-medal" style="font-size: 2rem; color: var(--accent-gold);"></i><br><strong>100% Satisfaction Guarantee</strong><br>If you're not happy with the quality, we'll remake your order or refund.</div>
 
   <h3><i class="fas fa-user"></i> Your contact information</h3><div class="form-grid"><div><input type="text" name="name" id="name" placeholder="Full name *" required></div><div><input type="email" name="email" id="email" placeholder="Business email *" required></div><div><input type="text" name="company" placeholder="Company name"></div><div><input type="text" name="phone" placeholder="Phone (optional)"></div><div style="grid-column: span 2;"><textarea name="additional_info" rows="2" placeholder="Any extra details? (e.g., urgency, artwork file ready)"></textarea></div></div>
 
@@ -162,22 +159,9 @@
   <p class="text-center" style="margin-top: 16px; font-size:0.8rem;"><i class="fas fa-lock"></i> Your data is private. We never share your sources.</p>
 </form></div></div></section>
 
-<!-- Size Guide Modal -->
-<div id="sizeModal" class="modal"><div class="modal-content"><span style="float:right; cursor:pointer; font-size:1.5rem;" id="closeModal">&times;</span><h3>Pouch Size Guide</h3><p><strong>Common mylar bag sizes (grams to ounces):</strong></p><ul><li>1g (0.035oz) – Sample / single serving</li><li>3.5g (1/8 oz) – Most popular for cannabis flower</li><li>7g (1/4 oz) – Standard “quarter”</li><li>14g (1/2 oz) – Bulk personal use</li><li>28g (1 oz) – Maximum retail size</li><li>Custom – Tell us your exact dimensions</li></ul><p>For food: common sizes are 4x6”, 5x7”, 6x9”, 8x10”.</p></div></div>
-
-<section style="background: #fefcf7;"><div class="container"><div style="max-width: 800px; margin: 0 auto; text-align: center;"><i class="fas fa-quote-left" style="font-size: 3rem; color: var(--accent-gold); opacity: 0.5;"></i><p style="font-size: 1.2rem; margin: 20px 0;">“The size presets saved us hours of back‑and‑forth. CannaLock is now our go‑to packaging partner.”</p><p><strong>— Cali Farms, Verified B2B Client</strong></p></div></div></section>
-
-<footer><div class="container"><div class="footer-grid"><div><h3 style="color: white;">CannaLock Packaging Global</h3><p><i class="fas fa-envelope"></i> sales@cannalockpackaging.com<br><i class="fas fa-phone"></i> +1 (888) 472-5625</p></div><div><h4>Quick links</h4><p><a href="#home" style="color: #bdd4b5;">Home</a><br><a href="#quote" style="color: #bdd4b5;">Quote Builder</a><br><a href="#sourcing" style="color: #bdd4b5;">Sourcing</a></p></div><div><h4>Certifications</h4><p>✅ FDA compliant<br>✅ ISO 9001<br>✅ Child‑Resistant (CR)</p></div></div><hr style="border-color: #2a3a2a; margin: 32px 0 24px;"><p style="text-align: center;">© 2025 CannaLock Packaging Global – B2B Custom Mylar Packaging. Confidential supply chain.</p></div></footer>
+<footer><div class="container"><div class="footer-grid"><div><h3 style="color: white;">CannaLock Packaging Global</h3><p><i class="fas fa-envelope"></i> sales@cannalockpackaging.com<br><i class="fas fa-phone"></i> +1 (888) 472-5625</p></div><div><h4>Quick links</h4><p><a href="#home" style="color: #bdd4b5;">Home</a><br><a href="#quote" style="color: #bdd4b5;">Quote Builder</a><br><a href="#sourcing" style="color: #bdd4b5;">Sourcing</a></p></div><div><h4>Certifications</h4><p>✅ FDA compliant<br>✅ ISO 9001<br>✅ Child‑Resistant (CR)</p></div></div><hr><p style="text-align: center;">© 2025 CannaLock Packaging Global – B2B Custom Mylar Packaging. Confidential supply chain.</p></div></footer>
 
 <script>
-  // Modal for size guide
-  const modal = document.getElementById('sizeModal');
-  const sizeLink = document.getElementById('sizeGuideLink');
-  const closeModal = document.getElementById('closeModal');
-  sizeLink.onclick = (e) => { e.preventDefault(); modal.style.display = 'block'; };
-  closeModal.onclick = () => { modal.style.display = 'none'; };
-  window.onclick = (e) => { if (e.target == modal) modal.style.display = 'none'; };
-
   // Expandable cards
   const cards = document.querySelectorAll('.service-card');
   const expands = {
@@ -194,16 +178,16 @@
   });
   cards.forEach(card => {
     card.addEventListener('click', () => {
-      const cardType = card.getAttribute('data-card');
-      Object.values(expands).forEach(exp => exp.classList.remove('show'));
-      if (cardType && expands[cardType]) {
-        expands[cardType].classList.add('show');
-        expands[cardType].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      const type = card.getAttribute('data-card');
+      Object.values(expands).forEach(exp => { if(exp) exp.classList.remove('show'); });
+      if (type && expands[type]) {
+        expands[type].classList.add('show');
+        expands[type].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
   });
 
-  // Option groups, size grid, add-ons (same as before)
+  // Option groups, size grid, add-ons
   function setupOptionGroup(groupId, hiddenInputId, summarySpanId) {
     const options = document.querySelectorAll(`#${groupId} .option-card`);
     const hiddenInput = document.getElementById(hiddenInputId);
@@ -212,9 +196,8 @@
       opt.addEventListener('click', () => {
         options.forEach(o => o.classList.remove('selected'));
         opt.classList.add('selected');
-        const value = opt.getAttribute('data-value');
-        hiddenInput.value = value;
-        if (summarySpan) summarySpan.innerText = value;
+        hiddenInput.value = opt.getAttribute('data-value');
+        if (summarySpan) summarySpan.innerText = opt.getAttribute('data-value');
         updateSummary();
       });
     });
@@ -229,7 +212,7 @@
     selectedCard.classList.add('selected');
     const sizeValue = selectedCard.getAttribute('data-size');
     sizeHidden.value = sizeValue;
-    if (sizeValue === 'Custom size') {
+    if (sizeValue === 'Custom') {
       customContainer.style.display = 'block';
       customSizeInput.required = true;
       sizeHidden.value = 'Custom: ' + (customSizeInput.value || '');
@@ -286,7 +269,7 @@
 
   document.getElementById('copySummaryBtn').addEventListener('click', () => {
     const summaryText = `Thickness: ${document.getElementById('sum-thickness').innerText}\nFinish: ${document.getElementById('sum-finish').innerText}\nClosure: ${document.getElementById('sum-closure').innerText}\nPrinting: ${document.getElementById('sum-printing').innerText}\nSize: ${document.getElementById('sum-size').innerText}\nQuantity: ${document.getElementById('sum-qty').innerText}\nAdd-ons: ${document.getElementById('sum-addons').innerText}`;
-    navigator.clipboard.writeText(summaryText).then(() => alert('Specs copied! You can paste them into an email.'));
+    navigator.clipboard.writeText(summaryText).then(() => alert('Specs copied!'));
   });
 
   const form = document.getElementById('quoteForm');
@@ -298,14 +281,14 @@
     if (!document.getElementById('closure').value) errors.push('Closure type');
     if (!document.getElementById('printing').value) errors.push('Printing option');
     let sizeVal = sizeHidden.value;
-    if (!sizeVal || (sizeVal.startsWith('Custom:') && (!customSizeInput.value.trim()))) errors.push('Pouch size (select preset or fill custom)');
+    if (!sizeVal || (sizeVal.startsWith('Custom:') && (!customSizeInput.value.trim()))) errors.push('Pouch size');
     if (!document.getElementById('quantity_range').value) errors.push('Quantity range');
     if (!document.getElementById('name').value.trim()) errors.push('Full name');
     const email = document.getElementById('email').value;
     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Valid business email');
     if (errors.length > 0) {
       errorSummaryDiv.style.display = 'block';
-      errorSummaryDiv.innerHTML = `<strong>⚠️ Missing information</strong><br>Please provide the following to get an accurate quote:<ul>${errors.map(e => `<li>${e}</li>`).join('')}</ul>`;
+      errorSummaryDiv.innerHTML = `<strong>⚠️ Missing information</strong><ul>${errors.map(e => `<li>${e}</li>`).join('')}</ul>`;
       errorSummaryDiv.scrollIntoView({ behavior: 'smooth' });
       return false;
     }
