@@ -48,7 +48,8 @@
     .card-expand.show { display: block; animation: fadeIn 0.3s ease; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     .expand-content { display: flex; flex-wrap: wrap; gap: 24px; align-items: center; }
-    .expand-visual { flex: 1; text-align: center; font-size: 4rem; color: var(--primary-dark); background: #eef3ea; border-radius: 32px; padding: 30px 20px; }
+    .expand-visual { flex: 1; text-align: center; background: #eef3ea; border-radius: 32px; padding: 20px; }
+    .expand-visual img { max-width: 100%; border-radius: 24px; max-height: 180px; object-fit: cover; }
     .expand-text { flex: 2; }
     .expand-text ul { margin-left: 20px; margin-top: 8px; }
     .expand-text li { margin: 8px 0; }
@@ -88,23 +89,23 @@
 
 <section id="home" class="hero"><div class="container hero-grid"><div class="hero-content"><div class="hero-badge"><i class="fas fa-shield-alt"></i> Trusted B2B Packaging Partner</div><h1>Custom Mylar Bags <br> At Factory‑Direct Prices</h1><p>Premium packaging for food, fruits & cannabis. Save 30‑40% with our confidential global sourcing. ISO & FDA certified materials, child‑resistant options, full customization.</p><div class="trust-badges" style="justify-content: flex-start; margin: 20px 0;"><div class="trust-badge"><i class="fas fa-certificate"></i> ISO 9001</div><div class="trust-badge"><i class="fas fa-apple-alt"></i> Food Grade</div><div class="trust-badge"><i class="fas fa-lock"></i> Child‑Resistant</div></div><div class="urgent-banner"><i class="fas fa-gift" style="color:#e67e22;"></i> <strong>Limited offer:</strong> Free sample pack on first B2B order &nbsp;|&nbsp; <i class="fas fa-clock"></i> Quote in 12h</div><a href="#quote" class="btn-primary"><i class="fas fa-cogs"></i> Build Your Specs →</a><div class="hero-stats"><div class="stat-item"><h3>500+</h3><p>B2B Clients</p></div><div class="stat-item"><h3>12M+</h3><p>Bags Shipped</p></div><div class="stat-item"><h3>98%</h3><p>On‑Time Delivery</p></div></div></div><div class="hero-image"><i class="fas fa-boxes-packaging"></i><i class="fas fa-lock" style="font-size: 3rem; margin-left: 15px;"></i></div></div></section>
 
-<!-- Interactive packaging solutions section -->
+<!-- Interactive packaging solutions section with images -->
 <section id="products"><div class="container"><h2 class="section-title text-center">Complete packaging solutions</h2><div class="cards-grid" id="solutionsGrid">
   <!-- Card 1: Food & Snacks -->
   <div class="service-card" data-card="food"><i class="fas fa-apple-alt"></i><h3>Food & Snacks</h3><p>Oxygen barrier, resealable zippers.</p></div>
-  <div class="card-expand" id="expand-food"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><i class="fas fa-cookie-bite" style="font-size: 4rem;"></i><br><i class="fas fa-box-open" style="font-size: 3rem;"></i><p style="margin-top: 12px;">🥨 Snack in Mylar</p></div><div class="expand-text"><h4>🍿 Preserve freshness & flavor</h4><ul><li>High-barrier protection against moisture & oxygen</li><li>Resealable zippers for repeated use</li><li>Custom printing with vibrant brand colors</li><li>Ideal for coffee, nuts, trail mix, protein powder</li><li>Available in stand-up pouches or flat bags</li></ul><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Get a quote for food bags →</a></div></div></div>
+  <div class="card-expand" id="expand-food"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><img src="https://images.pexels.com/photos/461428/coffee-bag-coffee-beans-coffee-package-461428.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Coffee beans in mylar bag"><br><i class="fas fa-box-open" style="font-size: 1.5rem; margin-top: 8px;"></i><p>Snack-grade mylar</p></div><div class="expand-text"><h4>🍿 Preserve freshness & flavor</h4><ul><li>High-barrier protection against moisture & oxygen</li><li>Resealable zippers for repeated use</li><li>Custom printing with vibrant brand colors</li><li>Ideal for coffee, nuts, trail mix, protein powder</li><li>Available in stand-up pouches or flat bags</li></ul><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Get a quote for food bags →</a></div></div></div>
 
   <!-- Card 2: Fruit Preservation -->
   <div class="service-card" data-card="fruit"><i class="fas fa-fruit-apple"></i><h3>Fruit Preservation</h3><p>Micro‑perforated, extended shelf life.</p></div>
-  <div class="card-expand" id="expand-fruit"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><i class="fas fa-apple-alt" style="font-size: 4rem;"></i><br><i class="fas fa-leaf" style="font-size: 2rem;"></i><p>🍎 Fresh fruit in breathable pouch</p></div><div class="expand-text"><h4>🍓 Keep produce fresher longer</h4><ul><li>Micro-perforation technology for optimal airflow</li><li>Moisture control liners prevent sogginess</li><li>Extends shelf life of berries, cherries, cut vegetables</li><li>Custom sizes for clamshells or stand-up pouches</li><li>Food-safe, BPA-free materials</li></ul><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Request fruit packaging →</a></div></div></div>
+  <div class="card-expand" id="expand-fruit"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><img src="https://images.pexels.com/photos/1191409/berries-fruit-bowl-fresh-1191409.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Fresh berries in breathable pouch"><br><i class="fas fa-leaf" style="font-size: 1.5rem;"></i><p>Breathable fruit pouch</p></div><div class="expand-text"><h4>🍓 Keep produce fresher longer</h4><ul><li>Micro-perforation technology for optimal airflow</li><li>Moisture control liners prevent sogginess</li><li>Extends shelf life of berries, cherries, cut vegetables</li><li>Custom sizes for clamshells or stand-up pouches</li><li>Food-safe, BPA-free materials</li></ul><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Request fruit packaging →</a></div></div></div>
 
   <!-- Card 3: Cannabis Packaging -->
   <div class="service-card" data-card="cannabis"><i class="fas fa-leaf"></i><h3>Cannabis Packaging</h3><p>Child‑resistant, smell‑proof, UV.</p></div>
-  <div class="card-expand" id="expand-cannabis"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><i class="fas fa-lock" style="font-size: 4rem;"></i><br><i class="fas fa-seedling" style="font-size: 2rem;"></i><p>🔒 Child‑resistant mylar</p></div><div class="expand-text"><h4>🌿 Compliant, discreet & secure</h4><ul><li>Certified child-resistant zippers & tear notches</li><li>Smell-proof and UV-resistant layers</li><li>Available in exit bags, mylar pouches, and custom shapes</li><li>Full compliance with state regulations</li><li>Custom branding for dispensaries and brands</li></ul><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Explore cannabis options →</a></div></div></div>
+  <div class="card-expand" id="expand-cannabis"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><img src="https://images.pexels.com/photos/2623168/close-up-of-a-cannabis-bud-2623168.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Cannabis flower in child-resistant bag"><br><i class="fas fa-lock" style="font-size: 1.5rem;"></i><p>CR certified bag</p></div><div class="expand-text"><h4>🌿 Compliant, discreet & secure</h4><ul><li>Certified child-resistant zippers & tear notches</li><li>Smell-proof and UV-resistant layers</li><li>Available in exit bags, mylar pouches, and custom shapes</li><li>Full compliance with state regulations</li><li>Custom branding for dispensaries and brands</li></ul><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Explore cannabis options →</a></div></div></div>
 
   <!-- Card 4: Full Customization -->
   <div class="service-card" data-card="custom"><i class="fas fa-palette"></i><h3>Full Customization</h3><p>Matte/gloss/metallic, low MOQ.</p></div>
-  <div class="card-expand" id="expand-custom"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><i class="fas fa-paint-brush" style="font-size: 4rem;"></i><br><i class="fas fa-swatchbook" style="font-size: 2rem;"></i><p>🎨 Unlimited design options</p></div><div class="expand-text"><h4>✨ Your brand, your way</h4><ul><li>Full-color digital printing – no setup fees</li><li>Matte, gloss, or metallic finishes</li><li>Low minimum order quantity (MOQ) – as low as 3,000 units</li><li>Add hang holes, gussets, windows, and more</li><li>Free design support & pre-production samples</li></ul><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Start your custom project →</a></div></div></div>
+  <div class="card-expand" id="expand-custom"><div class="close-expand"><i class="fas fa-times"></i></div><div class="expand-content"><div class="expand-visual"><img src="https://images.pexels.com/photos/4483807/custom-printed-bags-4483807.jpeg?auto=compress&cs=tinysrgb&w=400&h=250&fit=crop" alt="Custom printed packaging samples"><br><i class="fas fa-paint-brush" style="font-size: 1.5rem;"></i><p>Your design</p></div><div class="expand-text"><h4>✨ Your brand, your way</h4><ul><li>Full-color digital printing – no setup fees</li><li>Matte, gloss, or metallic finishes</li><li>Low minimum order quantity (MOQ) – as low as 3,000 units</li><li>Add hang holes, gussets, windows, and more</li><li>Free design support & pre-production samples</li></ul><a href="#quote" class="btn-outline" style="margin-top: 12px; display: inline-block;">Start your custom project →</a></div></div></div>
 </div></div></section>
 
 <section id="sourcing" style="background: #fefcf7;"><div class="container"><h2 class="section-title text-center">How we deliver premium packaging</h2><div style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: space-between; margin: 40px 0;"><div class="step-item"><div class="step-number">1</div><h3>Share specs</h3><p>Via our easy builder.</p></div><div class="step-item"><div class="step-number">2</div><h3>Samples & approval</h3><p>Proof + sample in 7 days.</p></div><div class="step-item"><div class="step-number">3</div><h3>Bulk production</h3><p>Low MOQ, strict QC.</p></div><div class="step-item"><div class="step-number">4</div><h3>Global delivery</h3><p>Sea/air, door‑to‑door.</p></div></div></div></section>
@@ -181,18 +182,15 @@
   cards.forEach(card => {
     card.addEventListener('click', () => {
       const cardType = card.getAttribute('data-card');
-      // Close all expands first
       Object.values(expands).forEach(exp => exp.classList.remove('show'));
-      // Open the corresponding expand
       if (cardType && expands[cardType]) {
         expands[cardType].classList.add('show');
-        // Smooth scroll to the expanded area
         expands[cardType].scrollIntoView({ behavior: 'smooth', block: 'nearest' });
       }
     });
   });
 
-  // Option groups, size grid, add-ons, etc. (existing code)
+  // Option groups, size grid, add-ons (same as before)
   function setupOptionGroup(groupId, hiddenInputId, summarySpanId) {
     const options = document.querySelectorAll(`#${groupId} .option-card`);
     const hiddenInput = document.getElementById(hiddenInputId);
