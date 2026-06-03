@@ -528,7 +528,7 @@
       </div>
     </section>
 
-    <!-- Quote & Contact section (B2B lead generation) - UPDATED WITH FORMSUBMIT -->
+    <!-- Quote & Contact section (B2B lead generation) - with auto-reply and redirect -->
     <section id="contact">
       <div class="container">
         <h2 class="section-title text-center">Request a volume quote</h2>
@@ -537,6 +537,10 @@
           <form action="https://formsubmit.co/cannalock.procurement@protonmail.com" method="POST" id="b2bForm">
             <input type="hidden" name="_subject" value="New quote request from CannaLock website">
             <input type="hidden" name="_captcha" value="false">
+            <!-- AUTO-RESPONDER: sends an immediate thank-you email to the customer -->
+            <input type="hidden" name="_autoresponse" value="Thank you for your inquiry! We have received your quote request and will reply within 12 hours. - CannaLock Packaging Global">
+            <!-- REDIRECT: after submit, go to custom thank-you page -->
+            <input type="hidden" name="_next" value="https://Cannalock-packaging.github.io/-cannalock-website/thankyou.html">
             <div class="form-grid">
               <div><input type="text" name="name" placeholder="Full name *" required></div>
               <div><input type="email" name="email" placeholder="Business email *" required></div>
@@ -594,7 +598,7 @@
   </footer>
 
   <script>
-    // smooth scroll for anchor links (no alert on form submit, FormSubmit handles it)
+    // smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -608,5 +612,4 @@
     });
   </script>
 </body>
-</html>
 </html>
