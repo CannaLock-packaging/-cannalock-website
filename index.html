@@ -28,7 +28,6 @@
       padding: 0 32px;
     }
 
-    /* color scheme */
     :root {
       --primary: #1f5e3a;
       --primary-dark: #0f4228;
@@ -38,9 +37,9 @@
       --gray-border: #e2e8e4;
       --text-dark: #1f2a1e;
       --text-muted: #4a5b44;
+      --error-red: #d32f2f;
     }
 
-    /* buttons */
     .btn-primary {
       background: var(--primary);
       color: white;
@@ -78,14 +77,12 @@
       color: white;
     }
 
-    /* navbar */
     .navbar {
       padding: 20px 0;
       background: white;
       position: sticky;
       top: 0;
       z-index: 100;
-      backdrop-filter: blur(0px);
       box-shadow: 0 2px 20px rgba(0,0,0,0.02);
       border-bottom: 1px solid var(--gray-border);
     }
@@ -109,7 +106,6 @@
       font-size: 0.8rem;
       font-weight: 500;
       color: var(--accent-gold);
-      letter-spacing: 0px;
       display: block;
     }
     .nav-links {
@@ -128,7 +124,6 @@
       color: var(--primary);
     }
 
-    /* sections */
     section {
       padding: 80px 0;
     }
@@ -137,7 +132,6 @@
       font-weight: 700;
       margin-bottom: 16px;
       color: var(--text-dark);
-      letter-spacing: -0.3px;
     }
     .section-sub {
       font-size: 1.1rem;
@@ -205,7 +199,6 @@
       opacity: 0.9;
     }
 
-    /* cards grid */
     .cards-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -236,7 +229,6 @@
       margin-bottom: 12px;
     }
 
-    /* product cards */
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -276,7 +268,6 @@
       margin-bottom: 12px;
     }
 
-    /* steps (sourcing process – discreet) */
     .steps-grid {
       display: flex;
       flex-wrap: wrap;
@@ -306,7 +297,6 @@
       margin-bottom: 20px;
     }
 
-    /* Why us */
     .features-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -322,7 +312,6 @@
       color: var(--accent-gold);
     }
 
-    /* contact form */
     .contact-wrapper {
       background: var(--gray-light);
       border-radius: 40px;
@@ -346,6 +335,24 @@
       border-radius: 24px;
       resize: vertical;
     }
+    .error-message {
+      color: var(--error-red);
+      font-size: 0.85rem;
+      margin-top: 8px;
+      display: none;
+    }
+    .error-summary {
+      background: #ffebee;
+      border-left: 4px solid var(--error-red);
+      padding: 16px 20px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      display: none;
+    }
+    .error-summary ul {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
     footer {
       background: #121c14;
       color: #cbdcc4;
@@ -360,6 +367,10 @@
     }
     .footer-col p, .footer-col i {
       margin: 12px 0;
+    }
+    .footer-col a {
+      color: #bdd4b5;
+      text-decoration: none;
     }
 
     @media (max-width: 768px) {
@@ -396,16 +407,12 @@
       font-weight: 500;
       border: none;
       cursor: pointer;
-      transition: 0.2s;
     }
     .text-center {
       text-align: center;
     }
     .mt-4 {
       margin-top: 24px;
-    }
-    .inline-icon {
-      margin-right: 6px;
     }
   </style>
 </head>
@@ -426,7 +433,6 @@
   </nav>
 
   <main>
-    <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="container hero-grid">
         <div class="hero-content">
@@ -451,7 +457,6 @@
       </div>
     </section>
 
-    <!-- Core Services -->
     <section>
       <div class="container">
         <div class="text-center">
@@ -467,33 +472,19 @@
       </div>
     </section>
 
-    <!-- Product Showcase (Custom Mylar Focus) -->
     <section id="products" style="background: #fbfef9;">
       <div class="container">
         <h2 class="section-title">Flagship custom mylar solutions</h2>
         <p class="section-sub">Designed for food safety, produce longevity & cannabis compliance — sourced through our trusted global supply chain.</p>
         <div class="product-grid">
-          <div class="product-card">
-            <div class="product-img"><i class="fas fa-shopping-bag fa-4x"></i></div>
-            <div class="product-info"><span class="badge">Stand-up pouch</span><h4>Food-grade Mylar Bags</h4><p>Resealable, high barrier, customizable thickness from 3mil to 6mil. Ideal for dry foods, protein powder, granola.</p><button class="btn-small" style="margin-top: 12px;" onclick="alert('Request a B2B quote for Food-grade Mylar → Our team replies within 4h')">Request pricing</button></div>
-          </div>
-          <div class="product-card">
-            <div class="product-img"><i class="fas fa-apple-alt fa-4x"></i></div>
-            <div class="product-info"><span class="badge">Fresh-Keep™ Tech</span><h4>Fruit Preservation Pouches</h4><p>Micro-perforated and moisture control mylar liners, extend shelf life of berries, cherries & cut vegetables.</p><button class="btn-small" style="margin-top: 12px;" onclick="alert('Get volume pricing for Fruit Pouches — custom sizes available')">Inquire now</button></div>
-          </div>
-          <div class="product-card">
-            <div class="product-img"><i class="fas fa-lock fa-4x"></i></div>
-            <div class="product-info"><span class="badge">Child-Resistant · Smell Proof</span><h4>Cannabis Exit Bags & Mylar</h4><p>CR certified, FDA-approved materials. Custom designs, humidity control liners — perfect for flower, edibles, pre-rolls.</p><button class="btn-small" style="margin-top: 12px;" onclick="alert('Cannabis compliant packaging available — request sample pack')">Sample pack</button></div>
-          </div>
-          <div class="product-card">
-            <div class="product-img"><i class="fas fa-palette fa-4x"></i></div>
-            <div class="product-info"><span class="badge">Fully Custom</span><h4>Digital Printed Mylar Rolls</h4><p>Your brand, your colors. Matte/gloss with window options. Low MOQ supported — full supply chain management.</p><button class="btn-small" style="margin-top: 12px;" onclick="alert('Custom artwork support + free design mockup')">Start project</button></div>
-          </div>
+          <div class="product-card"><div class="product-img"><i class="fas fa-shopping-bag fa-4x"></i></div><div class="product-info"><span class="badge">Stand-up pouch</span><h4>Food-grade Mylar Bags</h4><p>Resealable, high barrier, customizable thickness from 3mil to 6mil. Ideal for dry foods, protein powder, granola.</p><button class="btn-small" onclick="alert('Request a B2B quote for Food-grade Mylar → Our team replies within 4h')">Request pricing</button></div></div>
+          <div class="product-card"><div class="product-img"><i class="fas fa-apple-alt fa-4x"></i></div><div class="product-info"><span class="badge">Fresh-Keep™ Tech</span><h4>Fruit Preservation Pouches</h4><p>Micro-perforated and moisture control mylar liners, extend shelf life of berries, cherries & cut vegetables.</p><button class="btn-small" onclick="alert('Get volume pricing for Fruit Pouches — custom sizes available')">Inquire now</button></div></div>
+          <div class="product-card"><div class="product-img"><i class="fas fa-lock fa-4x"></i></div><div class="product-info"><span class="badge">Child-Resistant · Smell Proof</span><h4>Cannabis Exit Bags & Mylar</h4><p>CR certified, FDA-approved materials. Custom designs, humidity control liners — perfect for flower, edibles, pre-rolls.</p><button class="btn-small" onclick="alert('Cannabis compliant packaging available — request sample pack')">Sample pack</button></div></div>
+          <div class="product-card"><div class="product-img"><i class="fas fa-palette fa-4x"></i></div><div class="product-info"><span class="badge">Fully Custom</span><h4>Digital Printed Mylar Rolls</h4><p>Your brand, your colors. Matte/gloss with window options. Low MOQ supported — full supply chain management.</p><button class="btn-small" onclick="alert('Custom artwork support + free design mockup')">Start project</button></div></div>
         </div>
       </div>
     </section>
 
-    <!-- Sourcing process (discreet partner network) -->
     <section id="sourcing">
       <div class="container">
         <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-bottom: 40px;">
@@ -510,7 +501,6 @@
       </div>
     </section>
 
-    <!-- Why choose + Trust -->
     <section style="background: #fefcf7;">
       <div class="container">
         <h2 class="section-title text-center">Why B2B partners trust CannaLock</h2>
@@ -528,33 +518,56 @@
       </div>
     </section>
 
-    <!-- Quote & Contact section (B2B lead generation) - with auto-reply and redirect -->
+    <!-- Contact form with validation -->
     <section id="contact">
       <div class="container">
         <h2 class="section-title text-center">Request a volume quote</h2>
-        <p class="section-sub text-center">Tell us about your custom mylar bag requirements — we’ll respond with factory-direct prices within 12 hours.</p>
+        <p class="section-sub text-center">Please provide all details so we can prepare an accurate quote. * Required fields</p>
         <div class="contact-wrapper">
-          <form action="https://formsubmit.co/cannalock.procurement@protonmail.com" method="POST" id="b2bForm">
+          <div id="form-error-summary" class="error-summary"></div>
+          <form id="b2bForm" action="https://formsubmit.co/cannalock.procurement@protonmail.com" method="POST">
             <input type="hidden" name="_subject" value="New quote request from CannaLock website">
             <input type="hidden" name="_captcha" value="false">
-            <!-- AUTO-RESPONDER: sends an immediate thank-you email to the customer -->
             <input type="hidden" name="_autoresponse" value="Thank you for your inquiry! We have received your quote request and will reply within 12 hours. - CannaLock Packaging Global">
-            <!-- REDIRECT: after submit, go to custom thank-you page -->
             <input type="hidden" name="_next" value="https://Cannalock-packaging.github.io/-cannalock-website/thankyou.html">
+            
             <div class="form-grid">
-              <div><input type="text" name="name" placeholder="Full name *" required></div>
-              <div><input type="email" name="email" placeholder="Business email *" required></div>
-              <div><input type="text" name="company" placeholder="Company name"></div>
-              <div><select name="product_interest">
-                <option value="">Select packaging type</option>
-                <option>Food-grade mylar bags</option>
-                <option>Fruit preservation pouches</option>
-                <option>Cannabis child-resistant bags</option>
-                <option>Custom printed rolls / Stand-up pouches</option>
-              </select></div>
-              <div style="grid-column: span 2;"><textarea name="message" rows="3" placeholder="Describe quantity, size, custom artwork or special requirements..."></textarea></div>
+              <div>
+                <input type="text" name="name" id="name" placeholder="Full name *" required>
+                <div class="error-message" id="name-error">Please enter your full name.</div>
+              </div>
+              <div>
+                <input type="email" name="email" id="email" placeholder="Business email *" required>
+                <div class="error-message" id="email-error">Please enter a valid business email.</div>
+              </div>
+              <div>
+                <input type="text" name="company" id="company" placeholder="Company name">
+              </div>
+              <div>
+                <select name="product_interest" id="product_interest" required>
+                  <option value="">Select packaging type *</option>
+                  <option>Food-grade mylar bags</option>
+                  <option>Fruit preservation pouches</option>
+                  <option>Cannabis child-resistant bags</option>
+                  <option>Custom printed rolls / Stand-up pouches</option>
+                </select>
+                <div class="error-message" id="product-error">Please select a packaging type.</div>
+              </div>
+              <div>
+                <input type="text" name="quantity" id="quantity" placeholder="Estimated quantity (e.g., 10,000 bags) *" required>
+                <div class="error-message" id="quantity-error">Please provide an estimated quantity.</div>
+              </div>
+              <div>
+                <input type="text" name="size" id="size" placeholder="Bag dimensions (e.g., 6\"x9\" or custom) *" required>
+                <div class="error-message" id="size-error">Please enter bag dimensions.</div>
+              </div>
+              <div style="grid-column: span 2;">
+                <textarea name="message" id="message" rows="3" placeholder="Additional details (material thickness, printing, special requirements...)"></textarea>
+              </div>
             </div>
-            <div class="text-center mt-4"><button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Submit B2B inquiry</button></div>
+            <div class="text-center mt-4">
+              <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Submit B2B inquiry</button>
+            </div>
             <p class="text-center" style="margin-top: 24px; font-size: 0.85rem;"><i class="fas fa-shield-alt"></i> Your information is secure — we never disclose our supply sources.</p>
           </form>
         </div>
@@ -573,10 +586,10 @@
         </div>
         <div class="footer-col">
           <h4 style="color: white;">Quick links</h4>
-          <p><a href="#home" style="color: #bdd4b5; text-decoration: none;">Home</a></p>
-          <p><a href="#products" style="color: #bdd4b5; text-decoration: none;">Mylar solutions</a></p>
-          <p><a href="#sourcing" style="color: #bdd4b5; text-decoration: none;">Sourcing process</a></p>
-          <p><a href="#contact" style="color: #bdd4b5; text-decoration: none;">Get quote</a></p>
+          <p><a href="#home">Home</a></p>
+          <p><a href="#products">Mylar solutions</a></p>
+          <p><a href="#sourcing">Sourcing process</a></p>
+          <p><a href="#contact">Get quote</a></p>
         </div>
         <div class="footer-col">
           <h4 style="color: white;">B2B advantages</h4>
@@ -598,7 +611,7 @@
   </footer>
 
   <script>
-    // smooth scroll for anchor links
+    // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
         const targetId = this.getAttribute('href');
@@ -609,6 +622,79 @@
           targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
       });
+    });
+
+    // Form validation
+    const form = document.getElementById('b2bForm');
+    const errorSummary = document.getElementById('form-error-summary');
+
+    function showFieldError(fieldId, errorId, condition, message) {
+      const field = document.getElementById(fieldId);
+      const errorDiv = document.getElementById(errorId);
+      if (!field) return false;
+      const isValid = condition(field.value);
+      if (!isValid) {
+        errorDiv.style.display = 'block';
+        field.style.borderColor = '#d32f2f';
+        return false;
+      } else {
+        errorDiv.style.display = 'none';
+        field.style.borderColor = '#cfdfc9';
+        return true;
+      }
+    }
+
+    function validateForm() {
+      let isValid = true;
+      const errorsList = [];
+
+      // Name
+      if (!showFieldError('name', 'name-error', val => val.trim() !== '', '')) {
+        isValid = false;
+        errorsList.push('Full name');
+      }
+      // Email
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(document.getElementById('email').value);
+      if (!emailValid) {
+        document.getElementById('email-error').style.display = 'block';
+        document.getElementById('email').style.borderColor = '#d32f2f';
+        isValid = false;
+        errorsList.push('Valid business email');
+      } else {
+        document.getElementById('email-error').style.display = 'none';
+        document.getElementById('email').style.borderColor = '#cfdfc9';
+      }
+      // Product type
+      if (!showFieldError('product_interest', 'product-error', val => val !== '', '')) {
+        isValid = false;
+        errorsList.push('Packaging type');
+      }
+      // Quantity
+      if (!showFieldError('quantity', 'quantity-error', val => val.trim() !== '', '')) {
+        isValid = false;
+        errorsList.push('Estimated quantity');
+      }
+      // Size
+      if (!showFieldError('size', 'size-error', val => val.trim() !== '', '')) {
+        isValid = false;
+        errorsList.push('Bag dimensions');
+      }
+
+      if (!isValid) {
+        errorSummary.style.display = 'block';
+        errorSummary.innerHTML = `<strong>⚠️ Missing information</strong><br>Please provide the following details to process your request:<ul>${errorsList.map(err => `<li>${err}</li>`).join('')}</ul>`;
+        errorSummary.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        return false;
+      } else {
+        errorSummary.style.display = 'none';
+        return true;
+      }
+    }
+
+    form.addEventListener('submit', function(e) {
+      if (!validateForm()) {
+        e.preventDefault();
+      }
     });
   </script>
 </body>
