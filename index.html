@@ -2,39 +2,609 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Thank You | CannaLock Packaging Global</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>CannaLock Packaging Global | Custom Mylar Bags B2B</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f6f9f3, #fff);
-      min-height: 100vh;
+      background: #fff;
+      color: #1a2c1e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+    :root {
+      --primary: #1f5e3a;
+      --primary-dark: #0f4228;
+      --accent-gold: #c9a03d;
+      --gray-light: #f9faf8;
+      --gray-border: #e2e8e4;
+      --text-dark: #1f2a1e;
+      --text-muted: #4a5b44;
+      --error-red: #d32f2f;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-weight: 600;
+      border-radius: 40px;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      transition: 0.2s;
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 26px;
+      border-radius: 40px;
+      font-weight: 600;
+      transition: 0.2s;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+    .navbar {
+      padding: 20px 0;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .logo h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #1f5e3a, #2a7a4b);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo span {
+      font-size: 0.8rem;
+      color: var(--accent-gold);
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text-dark);
+    }
+    .nav-links a:hover { color: var(--primary); }
+    section { padding: 80px 0; }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+    }
+    .section-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+    .hero {
+      background: linear-gradient(100deg, #fefcf5, #f6f9f3);
+      padding: 60px 0 80px;
+    }
+    .hero-grid {
       display: flex;
       align-items: center;
-      justify-content: center;
-      margin: 0;
-      padding: 20px;
+      gap: 48px;
+      flex-wrap: wrap;
     }
-    .card {
+    .hero-content { flex: 1; }
+    .hero-badge {
+      background: #e9f3ed;
+      color: var(--primary);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .stat-item h3 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .hero-image {
+      flex: 1;
+      background: #e4efdf;
+      border-radius: 36px;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+    }
+    .hero-image i { font-size: 8rem; color: var(--primary-dark); }
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .service-card {
       background: white;
+      border-radius: 28px;
+      padding: 32px 24px;
+      border: 1px solid var(--gray-border);
+      text-align: center;
+      transition: 0.25s;
+    }
+    .service-card:hover { transform: translateY(-6px); border-color: #cfdec7; }
+    .service-card i { font-size: 2.8rem; color: var(--primary); margin-bottom: 20px; }
+    .service-card h3 { font-size: 1.5rem; margin-bottom: 12px; }
+    .trust-badges {
+      display: flex;
+      justify-content: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      margin: 40px 0;
+    }
+    .trust-badge {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: white;
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--gray-border);
+    }
+    .trust-badge i { font-size: 1.6rem; color: var(--accent-gold); }
+    /* Specification builder */
+    .spec-builder {
+      background: var(--gray-light);
       border-radius: 48px;
       padding: 48px;
-      text-align: center;
-      max-width: 500px;
-      box-shadow: 0 20px 35px rgba(0,0,0,0.1);
+      margin-top: 20px;
     }
-    i { font-size: 4rem; color: #1f5e3a; margin-bottom: 20px; }
-    h1 { margin: 16px 0; }
-    .btn { background: #1f5e3a; color: white; padding: 12px 28px; border-radius: 40px; text-decoration: none; display: inline-block; margin-top: 20px; }
+    .builder-step {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #e2e8e4;
+      padding-bottom: 32px;
+    }
+    .builder-step h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .option-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .option-card {
+      background: white;
+      border: 2px solid var(--gray-border);
+      border-radius: 32px;
+      padding: 12px 24px;
+      cursor: pointer;
+      transition: 0.2s;
+      font-weight: 500;
+    }
+    .option-card.selected {
+      border-color: var(--primary);
+      background: #e9f3ed;
+      color: var(--primary-dark);
+    }
+    .option-card:hover { border-color: var(--primary); }
+    .summary-box {
+      background: #eef3ea;
+      border-radius: 32px;
+      padding: 24px;
+      margin: 24px 0;
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 28px;
+      border: 1px solid #cfdfc9;
+      font-family: inherit;
+    }
+    .error-message {
+      color: var(--error-red);
+      font-size: 0.8rem;
+      margin-top: 6px;
+      display: none;
+    }
+    .error-summary {
+      background: #ffebee;
+      border-left: 4px solid var(--error-red);
+      padding: 16px 20px;
+      border-radius: 16px;
+      margin-bottom: 24px;
+      display: none;
+    }
+    footer {
+      background: #121c14;
+      color: #cbdcc4;
+      padding: 48px 0 24px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .hero-content h1 { font-size: 2.3rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .spec-builder { padding: 24px; }
+    }
+    .text-center { text-align: center; }
+    .mt-4 { margin-top: 24px; }
   </style>
 </head>
 <body>
-  <div class="card">
-    <i class="fas fa-check-circle"></i>
-    <h1>Thank You!</h1>
-    <p>Your custom packaging specs have been received.<br>We’ll reply with a quote within 12 hours.</p>
-    <a href="https://Cannalock-packaging.github.io/-cannalock-website/" class="btn">← Back to Home</a>
-  </div>
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="logo"><h1>CannaLock<span>Packaging Global</span></h1></div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#products">Packaging</a>
+        <a href="#sourcing">Sourcing</a>
+        <a href="#quote">Quote Builder</a>
+        <a href="#" class="btn-outline" style="padding: 8px 20px;"><i class="fas fa-globe"></i> B2B Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge"><i class="fas fa-shield-alt"></i> Trusted B2B Packaging Partner</div>
+          <h1>Custom Mylar Bags <br> At Factory‑Direct Prices</h1>
+          <p>Premium packaging for food, fruits & cannabis. Save 30‑40% with our confidential global sourcing. ISO & FDA certified materials, child‑resistant options, full customization.</p>
+          <div class="trust-badges" style="justify-content: flex-start; margin: 20px 0;">
+            <div class="trust-badge"><i class="fas fa-certificate"></i> ISO 9001</div>
+            <div class="trust-badge"><i class="fas fa-apple-alt"></i> Food Grade</div>
+            <div class="trust-badge"><i class="fas fa-lock"></i> Child‑Resistant</div>
+          </div>
+          <a href="#quote" class="btn-primary"><i class="fas fa-cogs"></i> Build Your Specs →</a>
+          <div class="hero-stats">
+            <div class="stat-item"><h3>500+</h3><p>B2B Clients</p></div>
+            <div class="stat-item"><h3>12M+</h3><p>Bags Shipped</p></div>
+            <div class="stat-item"><h3>98%</h3><p>On‑Time Delivery</p></div>
+          </div>
+        </div>
+        <div class="hero-image"><i class="fas fa-boxes-packaging"></i><i class="fas fa-lock" style="font-size: 3rem; margin-left: 15px;"></i></div>
+      </div>
+    </section>
+
+    <!-- Product overview cards (same as before) -->
+    <section id="products">
+      <div class="container">
+        <h2 class="section-title text-center">Complete packaging solutions</h2>
+        <div class="cards-grid">
+          <div class="service-card"><i class="fas fa-apple-alt"></i><h3>Food & Snacks</h3><p>Oxygen barrier, resealable zippers, custom print for coffee, nuts, dried fruits.</p></div>
+          <div class="service-card"><i class="fas fa-fruit-apple"></i><h3>Fruit Preservation</h3><p>Micro-perforated pouches, moisture control, extended shelf life.</p></div>
+          <div class="service-card"><i class="fas fa-leaf"></i><h3>Cannabis Packaging</h3><p>Child‑resistant, smell‑proof, UV protection, compliant with regulations.</p></div>
+          <div class="service-card"><i class="fas fa-palette"></i><h3>Full Customization</h3><p>Matte/gloss/metallic, full color printing, low MOQ, free design support.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sourcing process (discreet) -->
+    <section id="sourcing" style="background: #fefcf7;">
+      <div class="container">
+        <h2 class="section-title text-center">How we deliver premium packaging</h2>
+        <div class="steps-grid" style="display: flex; gap: 24px; flex-wrap: wrap; justify-content: space-between; margin: 40px 0;">
+          <div class="step-item" style="flex:1; background: white; border-radius: 28px; padding: 28px 20px; text-align: center; border: 1px solid var(--gray-border);"><div style="background: var(--primary); width: 48px; height: 48px; border-radius: 60px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 800; margin-bottom: 20px;">1</div><h3>Share specs</h3><p>Via our builder or contact form.</p></div>
+          <div class="step-item" style="flex:1; background: white; border-radius: 28px; padding: 28px 20px; text-align: center; border: 1px solid var(--gray-border);"><div style="background: var(--primary); width: 48px; height: 48px; border-radius: 60px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 800; margin-bottom: 20px;">2</div><h3>Samples & approval</h3><p>Digital proof + physical sample within 7 days.</p></div>
+          <div class="step-item" style="flex:1; background: white; border-radius: 28px; padding: 28px 20px; text-align: center; border: 1px solid var(--gray-border);"><div style="background: var(--primary); width: 48px; height: 48px; border-radius: 60px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 800; margin-bottom: 20px;">3</div><h3>Bulk production</h3><p>Low MOQs, fast lead times, quality control.</p></div>
+          <div class="step-item" style="flex:1; background: white; border-radius: 28px; padding: 28px 20px; text-align: center; border: 1px solid var(--gray-border);"><div style="background: var(--primary); width: 48px; height: 48px; border-radius: 60px; display: inline-flex; align-items: center; justify-content: center; color: white; font-weight: 800; margin-bottom: 20px;">4</div><h3>Global delivery</h3><p>Sea/air freight, warehousing, door‑to‑door.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Specification Builder + Quote Form -->
+    <section id="quote">
+      <div class="container">
+        <h2 class="section-title text-center">Design your custom mylar bags</h2>
+        <p class="section-sub text-center">Select your preferences – we’ll provide an exact quote within 12 hours.</p>
+        <div class="spec-builder" id="specBuilder">
+          <div id="form-error-summary" class="error-summary"></div>
+          <form id="quoteForm" action="https://formsubmit.co/cannalock.procurement@protonmail.com" method="POST">
+            <input type="hidden" name="_subject" value="Detailed custom packaging quote request">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="Thank you for your detailed specs! We'll reply with pricing within 12 hours. - CannaLock Packaging Global">
+            <input type="hidden" name="_next" value="https://Cannalock-packaging.github.io/-cannalock-website/thankyou.html">
+
+            <!-- Step 1: Material & Thickness -->
+            <div class="builder-step">
+              <h3><i class="fas fa-layer-group"></i> 1. Material & Thickness</h3>
+              <div class="option-group" id="thickness-group">
+                <div class="option-card" data-value="3mil">3mil Standard</div>
+                <div class="option-card" data-value="4mil">4mil Heavy Duty</div>
+                <div class="option-card" data-value="5mil">5mil Premium</div>
+                <div class="option-card" data-value="6mil">6mil Ultra Strong</div>
+              </div>
+              <input type="hidden" name="thickness" id="thickness" required>
+            </div>
+
+            <!-- Step 2: Finish -->
+            <div class="builder-step">
+              <h3><i class="fas fa-paint-roller"></i> 2. Finish</h3>
+              <div class="option-group" id="finish-group">
+                <div class="option-card" data-value="Matte">Matte (non‑glare)</div>
+                <div class="option-card" data-value="Gloss">Gloss (shiny)</div>
+                <div class="option-card" data-value="Metallic">Metallic (premium look)</div>
+              </div>
+              <input type="hidden" name="finish" id="finish" required>
+            </div>
+
+            <!-- Step 3: Closure -->
+            <div class="builder-step">
+              <h3><i class="fas fa-lock"></i> 3. Closure Type</h3>
+              <div class="option-group" id="closure-group">
+                <div class="option-card" data-value="Resealable zipper">Resealable Zipper</div>
+                <div class="option-card" data-value="Child-resistant zipper">Child‑Resistant Zipper (cannabis)</div>
+                <div class="option-card" data-value="Tear notch">Tear Notch (single use)</div>
+                <div class="option-card" data-value="Heat seal">Heat Seal (flat bottom)</div>
+              </div>
+              <input type="hidden" name="closure" id="closure" required>
+            </div>
+
+            <!-- Step 4: Printing -->
+            <div class="builder-step">
+              <h3><i class="fas fa-print"></i> 4. Printing</h3>
+              <div class="option-group" id="printing-group">
+                <div class="option-card" data-value="No printing">No printing (plain)</div>
+                <div class="option-card" data-value="1-2 colors">1‑2 colors (spot)</div>
+                <div class="option-card" data-value="Full color CMYK">Full color CMYK (photographic)</div>
+              </div>
+              <input type="hidden" name="printing" id="printing" required>
+            </div>
+
+            <!-- Step 5: Size & Quantity -->
+            <div class="builder-step">
+              <h3><i class="fas fa-ruler"></i> 5. Size & Quantity</h3>
+              <div class="form-grid" style="margin-top: 0;">
+                <div><input type="text" name="size" id="size" placeholder="Dimensions e.g., 6x9 inches or custom *" required></div>
+                <div>
+                  <select name="quantity_range" id="quantity_range" required>
+                    <option value="">Select estimated quantity *</option>
+                    <option>1,000 - 5,000 bags</option>
+                    <option>5,001 - 10,000 bags</option>
+                    <option>10,001 - 25,000 bags</option>
+                    <option>25,001 - 50,000 bags</option>
+                    <option>50,001+ bags</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <!-- Step 6: Add-ons -->
+            <div class="builder-step">
+              <h3><i class="fas fa-plus-circle"></i> 6. Add‑ons (optional)</h3>
+              <div class="option-group" id="addons-group" style="flex-wrap: wrap;">
+                <div class="option-card" data-value="Hang hole">Hang hole</div>
+                <div class="option-card" data-value="Gusset bottom">Gusset bottom (stand‑up)</div>
+                <div class="option-card" data-value="Clear window">Clear window</div>
+                <div class="option-card" data-value="Smell-proof layer">Smell‑proof layer</div>
+              </div>
+              <input type="hidden" name="addons" id="addons" value="">
+              <p class="text-muted" style="margin-top: 12px;">Click to select multiple. Selected: <span id="addons-selected">none</span></p>
+            </div>
+
+            <!-- Summary Box -->
+            <div class="summary-box" id="spec-summary">
+              <strong>Your custom specs summary:</strong><br>
+              Thickness: <span id="sum-thickness">—</span> | Finish: <span id="sum-finish">—</span> | Closure: <span id="sum-closure">—</span> | Printing: <span id="sum-printing">—</span><br>
+              Size: <span id="sum-size">—</span> | Quantity: <span id="sum-qty">—</span> | Add‑ons: <span id="sum-addons">—</span>
+            </div>
+
+            <!-- Contact details -->
+            <h3><i class="fas fa-user"></i> Your contact information</h3>
+            <div class="form-grid">
+              <div><input type="text" name="name" id="name" placeholder="Full name *" required></div>
+              <div><input type="email" name="email" id="email" placeholder="Business email *" required></div>
+              <div><input type="text" name="company" placeholder="Company name"></div>
+              <div><input type="text" name="phone" placeholder="Phone number (optional)"></div>
+              <div style="grid-column: span 2;"><textarea name="additional_info" rows="2" placeholder="Any extra details? (e.g., urgency, special printing file)"></textarea></div>
+            </div>
+            <div class="text-center mt-4">
+              <button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Send Quote Request</button>
+            </div>
+            <p class="text-center" style="margin-top: 24px; font-size: 0.85rem;"><i class="fas fa-shield-alt"></i> 100% confidential. No hidden fees. Your sources are never disclosed.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonial & trust -->
+    <section style="background: #fefcf7;">
+      <div class="container">
+        <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+          <i class="fas fa-quote-left" style="font-size: 3rem; color: var(--accent-gold); opacity: 0.5;"></i>
+          <p style="font-size: 1.2rem; margin: 20px 0;">“CannaLock helped us reduce mylar packaging costs by 34% while maintaining child‑resistant certification. Their spec builder made ordering effortless.”</p>
+          <p><strong>— GreenLeaf Dispensaries, Verified B2B Client</strong></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><h3 style="color: white;">CannaLock Packaging Global</h3><p><i class="fas fa-envelope"></i> sales@cannalockpackaging.com<br><i class="fas fa-phone"></i> +1 (888) 472-5625</p></div>
+        <div><h4>Quick links</h4><p><a href="#home" style="color: #bdd4b5;">Home</a><br><a href="#quote" style="color: #bdd4b5;">Quote Builder</a><br><a href="#sourcing" style="color: #bdd4b5;">Sourcing</a></p></div>
+        <div><h4>Certifications</h4><p>✅ FDA compliant<br>✅ ISO 9001<br>✅ Child‑Resistant (CR)</p></div>
+      </div>
+      <hr style="border-color: #2a3a2a; margin: 32px 0 24px;">
+      <p style="text-align: center;">© 2025 CannaLock Packaging Global – B2B Custom Mylar Packaging. Confidential supply chain.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Interactive option cards (single selection for thickness, finish, closure, printing)
+    function setupOptionGroup(groupId, hiddenInputId, summarySpanId) {
+      const options = document.querySelectorAll(`#${groupId} .option-card`);
+      const hiddenInput = document.getElementById(hiddenInputId);
+      const summarySpan = document.getElementById(summarySpanId);
+      options.forEach(opt => {
+        opt.addEventListener('click', () => {
+          options.forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          const value = opt.getAttribute('data-value');
+          hiddenInput.value = value;
+          if (summarySpan) summarySpan.innerText = value;
+          updateSummary();
+        });
+      });
+    }
+
+    // Add-ons (multi-select)
+    const addonsMap = new Map();
+    function setupAddons() {
+      const addonOptions = document.querySelectorAll('#addons-group .option-card');
+      const addonsHidden = document.getElementById('addons');
+      const addonsSpan = document.getElementById('addons-selected');
+      const sumAddonsSpan = document.getElementById('sum-addons');
+      addonOptions.forEach(opt => {
+        opt.addEventListener('click', () => {
+          const val = opt.getAttribute('data-value');
+          if (addonsMap.has(val)) {
+            addonsMap.delete(val);
+            opt.classList.remove('selected');
+          } else {
+            addonsMap.set(val, true);
+            opt.classList.add('selected');
+          }
+          const selected = Array.from(addonsMap.keys());
+          addonsHidden.value = selected.join(', ');
+          addonsSpan.innerText = selected.join(', ') || 'none';
+          if (sumAddonsSpan) sumAddonsSpan.innerText = selected.join(', ') || 'none';
+          updateSummary();
+        });
+      });
+    }
+
+    function updateSummary() {
+      document.getElementById('sum-thickness').innerText = document.getElementById('thickness').value || '—';
+      document.getElementById('sum-finish').innerText = document.getElementById('finish').value || '—';
+      document.getElementById('sum-closure').innerText = document.getElementById('closure').value || '—';
+      document.getElementById('sum-printing').innerText = document.getElementById('printing').value || '—';
+      document.getElementById('sum-size').innerText = document.getElementById('size').value || '—';
+      const qtySelect = document.getElementById('quantity_range');
+      document.getElementById('sum-qty').innerText = qtySelect.options[qtySelect.selectedIndex]?.text || '—';
+      const addonsArray = Array.from(addonsMap.keys());
+      document.getElementById('sum-addons').innerText = addonsArray.join(', ') || '—';
+    }
+
+    // Form validation
+    const form = document.getElementById('quoteForm');
+    const errorSummaryDiv = document.getElementById('form-error-summary');
+
+    function validateForm() {
+      let errors = [];
+      if (!document.getElementById('thickness').value) errors.push('Material thickness');
+      if (!document.getElementById('finish').value) errors.push('Finish type');
+      if (!document.getElementById('closure').value) errors.push('Closure type');
+      if (!document.getElementById('printing').value) errors.push('Printing option');
+      if (!document.getElementById('size').value.trim()) errors.push('Bag dimensions');
+      if (!document.getElementById('quantity_range').value) errors.push('Quantity range');
+      if (!document.getElementById('name').value.trim()) errors.push('Full name');
+      const email = document.getElementById('email').value;
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Valid business email');
+      if (errors.length > 0) {
+        errorSummaryDiv.style.display = 'block';
+        errorSummaryDiv.innerHTML = `<strong>⚠️ Missing information</strong><br>Please provide the following to get an accurate quote:<ul>${errors.map(e => `<li>${e}</li>`).join('')}</ul>`;
+        errorSummaryDiv.scrollIntoView({ behavior: 'smooth' });
+        return false;
+      }
+      errorSummaryDiv.style.display = 'none';
+      return true;
+    }
+
+    form.addEventListener('submit', (e) => {
+      if (!validateForm()) e.preventDefault();
+    });
+
+    // Sync size and quantity to summary on input
+    document.getElementById('size').addEventListener('input', updateSummary);
+    document.getElementById('quantity_range').addEventListener('change', updateSummary);
+    document.getElementById('name').addEventListener('input', () => {});
+    
+    // Initialize
+    setupOptionGroup('thickness-group', 'thickness', 'sum-thickness');
+    setupOptionGroup('finish-group', 'finish', 'sum-finish');
+    setupOptionGroup('closure-group', 'closure', 'sum-closure');
+    setupOptionGroup('printing-group', 'printing', 'sum-printing');
+    setupAddons();
+    updateSummary();
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = this.getAttribute('href');
+        if (target === "#" || target === "") return;
+        const el = document.querySelector(target);
+        if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+      });
+    });
+  </script>
 </body>
 </html>
