@@ -4,78 +4,53 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You | CannaLock Packaging Global</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
     body {
       font-family: 'Inter', sans-serif;
-      background: linear-gradient(135deg, #f6f9f3 0%, #ffffff 100%);
+      background: linear-gradient(135deg, #f6f9f3, #fff);
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+      margin: 0;
       padding: 20px;
     }
-    .thankyou-card {
-      max-width: 600px;
+    .card {
       background: white;
       border-radius: 48px;
-      padding: 48px 40px;
+      padding: 48px;
       text-align: center;
-      box-shadow: 0 25px 45px -12px rgba(0,0,0,0.2);
-      border: 1px solid #e2e8e4;
+      max-width: 500px;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.1);
     }
-    .thankyou-card i {
-      font-size: 4rem;
-      color: #1f5e3a;
-      margin-bottom: 24px;
-    }
-    h1 {
-      font-size: 2rem;
-      margin-bottom: 16px;
-      color: #1a2c1e;
-    }
-    p {
-      color: #4a5b44;
-      line-height: 1.6;
-      margin-bottom: 32px;
-    }
-    .btn-home {
+    i { font-size: 4rem; color: #1f5e3a; margin-bottom: 20px; }
+    h1 { margin: 16px 0; font-size: 2rem; }
+    p { color: #4a5b44; margin-bottom: 24px; }
+    .btn {
       background: #1f5e3a;
       color: white;
-      border: none;
-      padding: 12px 32px;
+      padding: 12px 28px;
       border-radius: 40px;
-      font-weight: 600;
       text-decoration: none;
       display: inline-block;
+      font-weight: 600;
       transition: 0.2s;
     }
-    .btn-home:hover {
+    .btn:hover {
       background: #0f4228;
       transform: translateY(-2px);
-    }
-    .note {
-      font-size: 0.85rem;
-      margin-top: 32px;
-      color: #7c8a76;
     }
   </style>
 </head>
 <body>
-  <div class="thankyou-card">
+  <div class="card">
     <i class="fas fa-check-circle"></i>
     <h1>Thank You!</h1>
-    <p>Your quote request has been sent successfully.<br>Our B2B sourcing team will reply within 12 hours.</p>
-    <a href="https://Cannalock-packaging.github.io/-cannalock-website/" class="btn-home">← Back to Homepage</a>
-    <div class="note">
-      <i class="fas fa-envelope"></i> A confirmation email has also been sent to your inbox.
-    </div>
+    <p>Your custom packaging specs have been received.<br>We'll reply with a quote within 12 hours.</p>
+    <a href="https://Cannalock-packaging.github.io/-cannalock-website/" class="btn">← Back to Home</a>
   </div>
+  <!-- Font Awesome for the check icon -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/js/all.min.js"></script>
 </body>
 </html>
