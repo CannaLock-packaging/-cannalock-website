@@ -2,267 +2,762 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CannaLock Packaging Global – Custom Mylar Bags B2B</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Hiigene Packaging Solutions | Premium Custom Mylar Bags & Pouches</title>
+  <!-- Google Fonts + Font Awesome 6 -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Inter', sans-serif; background: #fff; color: #1a2c1e; line-height: 1.5; scroll-behavior: smooth; }
-    .container { max-width: 1280px; margin: 0 auto; padding: 0 32px; }
-    :root { --primary: #1f5e3a; --primary-dark: #0f4228; --accent-gold: #c9a03d; --gray-border: #e2e8e4; --gray-light: #f8faf7; }
-    .btn-primary { background: var(--primary); color: white; border: none; padding: 12px 28px; border-radius: 40px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; text-decoration: none; transition: 0.2s; }
-    .btn-primary:hover { background: var(--primary-dark); transform: translateY(-2px); }
-    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); padding: 8px 22px; border-radius: 40px; font-weight: 500; text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
-    .btn-outline:hover { background: var(--primary); color: white; }
-    .navbar { padding: 20px 0; background: white; border-bottom: 1px solid var(--gray-border); position: sticky; top: 0; z-index: 100; backdrop-filter: blur(10px); background: rgba(255,255,255,0.95); }
-    .nav-flex { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-    .logo h1 { font-size: 1.7rem; font-weight: 800; background: linear-gradient(135deg, #1f5e3a, #2a7a4b); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .logo span { font-size: 0.8rem; color: var(--accent-gold); display: block; }
-    .nav-links { display: flex; gap: 32px; flex-wrap: wrap; }
-    .nav-links a { text-decoration: none; font-weight: 500; color: #1a2c1e; }
-    .nav-links a:hover { color: var(--primary); }
-    section { padding: 80px 0; }
-    .section-title { font-size: 2.2rem; font-weight: 700; margin-bottom: 16px; text-align: center; }
-    .section-sub { text-align: center; color: #4a5b44; max-width: 700px; margin: 0 auto 48px; }
-    .hero { background: linear-gradient(100deg, #fefcf5, #f6f9f3); padding: 60px 0; }
-    .hero-grid { display: flex; align-items: center; gap: 48px; flex-wrap: wrap; }
-    .hero-content { flex: 1; }
-    .hero-badge { background: #e9f3ed; color: var(--primary); display: inline-block; padding: 6px 14px; border-radius: 40px; font-size: 0.8rem; font-weight: 600; margin-bottom: 20px; }
-    .hero-content h1 { font-size: 3.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; }
-    .hero-content p { font-size: 1.1rem; color: #4a5b44; margin-bottom: 32px; }
-    .hero-image { flex: 1; text-align: center; }
-    .hero-image img { max-width: 100%; border-radius: 36px; box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1); max-height: 350px; object-fit: cover; width: 100%; }
-    .trust-badges { display: flex; flex-wrap: wrap; gap: 16px; margin: 30px 0; }
-    .trust-badge { background: white; padding: 8px 20px; border-radius: 100px; border: 1px solid var(--gray-border); display: inline-flex; align-items: center; gap: 8px; }
-    .cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 28px; margin: 40px 0; }
-    .service-card { background: white; border-radius: 28px; padding: 32px 24px; border: 1px solid var(--gray-border); text-align: center; transition: 0.25s; cursor: pointer; }
-    .service-card:hover { transform: translateY(-6px); border-color: var(--primary); }
-    .service-card i { font-size: 2.8rem; color: var(--primary); margin-bottom: 20px; }
-    .feature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; margin: 60px 0; }
-    .feature-grid img { max-width: 100%; border-radius: 32px; box-shadow: 0 8px 20px rgba(0,0,0,0.05); }
-    .image-gallery { display: flex; flex-wrap: wrap; gap: 24px; justify-content: center; margin: 40px 0; }
-    .gallery-item { background: white; border-radius: 24px; padding: 16px; border: 1px solid var(--gray-border); text-align: center; width: 220px; }
-    .gallery-item img { max-width: 100%; border-radius: 16px; height: 140px; object-fit: cover; }
-    .spec-builder { background: var(--gray-light); border-radius: 48px; padding: 48px; margin-top: 20px; }
-    .builder-step { margin-bottom: 32px; border-bottom: 1px solid #e2e8e4; padding-bottom: 28px; }
-    .builder-step h3 { font-size: 1.3rem; margin-bottom: 18px; display: flex; align-items: center; gap: 10px; }
-    .option-group { display: flex; flex-wrap: wrap; gap: 12px; }
-    .option-card { background: white; border: 2px solid var(--gray-border); border-radius: 60px; padding: 8px 20px; cursor: pointer; font-weight: 500; transition: 0.15s; }
-    .option-card.selected { border-color: var(--primary); background: #e9f3ed; }
-    .size-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); gap: 12px; }
-    .size-card { background: white; border: 2px solid var(--gray-border); border-radius: 28px; padding: 10px; text-align: center; cursor: pointer; }
-    .size-card.selected { border-color: var(--primary); background: #e9f3ed; }
-    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
-    input, select, textarea { width: 100%; padding: 12px 16px; border-radius: 28px; border: 1px solid #cfdfc9; font-family: inherit; }
-    .spec-table { width: 100%; border-collapse: collapse; background: white; border-radius: 20px; overflow: hidden; margin: 20px 0; }
-    .spec-table td { padding: 10px 14px; border-bottom: 1px solid var(--gray-border); }
-    .spec-table td:first-child { font-weight: 600; background: #eef3ea; width: 35%; }
-    .error-summary { background: #ffebee; border-left: 4px solid #d32f2f; padding: 16px 20px; border-radius: 20px; margin-bottom: 24px; display: none; }
-    .footer { background: #121c14; color: #cbdcc4; padding: 48px 0 24px; margin-top: 80px; }
-    .footer-grid { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 40px; }
-    @media (max-width: 768px) { .container { padding: 0 20px; } .hero-content h1 { font-size: 2.3rem; } .feature-grid { grid-template-columns: 1fr; } .form-grid { grid-template-columns: 1fr; } .spec-builder { padding: 24px; } }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #ffffff;
+      color: #1a2c1e;
+      line-height: 1.5;
+      scroll-behavior: smooth;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* color scheme */
+    :root {
+      --primary: #1f5e3a;
+      --primary-dark: #0f4228;
+      --accent-gold: #c9a03d;
+      --gray-light: #f9faf8;
+      --gray-border: #e2e8e4;
+      --text-dark: #1f2a1e;
+      --text-muted: #4a5b44;
+    }
+
+    /* buttons */
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      font-weight: 600;
+      border-radius: 40px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 20px rgba(31,94,58,0.2);
+    }
+    .btn-outline {
+      background: transparent;
+      border: 2px solid var(--primary);
+      color: var(--primary);
+      padding: 10px 26px;
+      font-weight: 600;
+      border-radius: 40px;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .btn-outline:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* navbar */
+    .navbar {
+      padding: 20px 0;
+      background: white;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(0px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.02);
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .nav-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .logo h1 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #1f5e3a 0%, #2a7a4b 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .logo span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--accent-gold);
+      letter-spacing: 0px;
+      display: block;
+    }
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .nav-links a {
+      text-decoration: none;
+      font-weight: 500;
+      color: var(--text-dark);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    /* sections */
+    section {
+      padding: 80px 0;
+    }
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+      color: var(--text-dark);
+      letter-spacing: -0.3px;
+    }
+    .section-sub {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 700px;
+      margin-bottom: 48px;
+    }
+    .hero {
+      padding: 60px 0 80px 0;
+      background: linear-gradient(100deg, #fefcf5 0%, #f6f9f3 100%);
+    }
+    .hero-grid {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      flex-wrap: wrap;
+    }
+    .hero-content {
+      flex: 1;
+    }
+    .hero-badge {
+      background: #e9f3ed;
+      color: var(--primary);
+      display: inline-block;
+      padding: 6px 14px;
+      border-radius: 40px;
+      font-size: 0.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .hero-content h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      color: #1a2c1e;
+    }
+    .hero-content p {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+      max-width: 540px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      margin-top: 40px;
+    }
+    .stat-item h3 {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .hero-image {
+      flex: 1;
+      background: #e4efdf;
+      border-radius: 36px;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 20px 35px -12px rgba(0,0,0,0.1);
+    }
+    .hero-image img {
+      max-width: 100%;
+      border-radius: 24px;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    /* trust badges */
+    .trust-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin: 30px 0;
+      justify-content: center;
+    }
+    .trust-badge {
+      background: white;
+      padding: 8px 20px;
+      border-radius: 100px;
+      border: 1px solid var(--gray-border);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 500;
+    }
+
+    /* product cards */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 20px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 28px;
+      padding: 32px 24px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+      transition: 0.25s ease;
+      border: 1px solid var(--gray-border);
+      text-align: center;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 35px rgba(31,94,58,0.08);
+      border-color: #cfdec7;
+    }
+    .service-card i {
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 20px;
+    }
+    .service-card h3 {
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+
+    /* image gallery */
+    .image-gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 24px;
+      justify-content: center;
+      margin: 40px 0;
+    }
+    .gallery-item {
+      background: white;
+      border-radius: 24px;
+      padding: 16px;
+      border: 1px solid var(--gray-border);
+      text-align: center;
+      width: 220px;
+      transition: transform 0.2s ease;
+    }
+    .gallery-item:hover {
+      transform: translateY(-5px);
+    }
+    .gallery-item img {
+      max-width: 100%;
+      border-radius: 16px;
+      height: 140px;
+      object-fit: cover;
+    }
+    .gallery-item p {
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    /* two-column feature grid */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin: 60px 0;
+    }
+    .feature-grid img {
+      max-width: 100%;
+      border-radius: 32px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+    }
+
+    /* quote builder form */
+    .spec-builder {
+      background: var(--gray-light);
+      border-radius: 48px;
+      padding: 48px;
+      margin-top: 20px;
+    }
+    .builder-step {
+      margin-bottom: 40px;
+      border-bottom: 1px solid #e2e8e4;
+      padding-bottom: 32px;
+    }
+    .builder-step h3 {
+      font-size: 1.4rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .option-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .option-card {
+      background: white;
+      border: 2px solid var(--gray-border);
+      border-radius: 60px;
+      padding: 10px 24px;
+      cursor: pointer;
+      transition: 0.15s;
+      font-weight: 500;
+    }
+    .option-card.selected {
+      border-color: var(--primary);
+      background: #e9f3ed;
+      color: var(--primary-dark);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 24px;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 28px;
+      border: 1px solid #cfdfc9;
+      background: white;
+      font-family: inherit;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      border-radius: 20px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+    .spec-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--gray-border);
+    }
+    .spec-table td:first-child {
+      font-weight: 600;
+      background: #eef3ea;
+      width: 35%;
+    }
+    .error-summary {
+      background: #ffebee;
+      border-left: 4px solid #d32f2f;
+      padding: 16px 20px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+      display: none;
+    }
+    footer {
+      background: #121c14;
+      color: #cbdcc4;
+      padding: 48px 0 24px;
+    }
+    .footer-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 40px;
+    }
+    @media (max-width: 768px) {
+      .container { padding: 0 20px; }
+      .hero-content h1 { font-size: 2.3rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .feature-grid { grid-template-columns: 1fr; }
+      .spec-builder { padding: 24px; }
+    }
     .text-center { text-align: center; }
     .mt-4 { margin-top: 24px; }
+    .text-muted { color: var(--text-muted); }
   </style>
 </head>
 <body>
-<nav class="navbar"><div class="container nav-flex"><div class="logo"><h1>CannaLock<span>Packaging Global</span></h1></div><div class="nav-links"><a href="#home">Home</a><a href="#packaging">Packaging</a><a href="#sourcing">Sourcing</a><a href="#quote">Quote Builder</a><a href="#" class="btn-outline" style="border:2px solid var(--primary);">B2B Portal</a></div></div></nav>
+  <nav class="navbar">
+    <div class="container nav-flex">
+      <div class="logo">
+        <h1>Hiigene<span>Packaging Solutions</span></h1>
+      </div>
+      <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#products">Solutions</a>
+        <a href="#sourcing">Sourcing</a>
+        <a href="#quote">Quote Builder</a>
+        <a href="#" class="btn-outline" style="padding: 8px 20px;"><i class="fas fa-globe"></i> B2B Portal</a>
+      </div>
+    </div>
+  </nav>
 
-<!-- Hero Section -->
-<section id="home" class="hero"><div class="container hero-grid"><div class="hero-content"><div class="hero-badge"><i class="fas fa-shield-alt"></i> USA Compliant & Wholesale Pricing</div><h1>Custom Mylar Bags <br> At Factory‑Direct Prices</h1><p>Premium packaging for food, fruits & cannabis. Save 30‑40% with our confidential global sourcing.</p><div class="trust-badges"><div class="trust-badge"><i class="fas fa-certificate"></i> ISO 9001</div><div class="trust-badge"><i class="fas fa-apple-alt"></i> Food Grade</div><div class="trust-badge"><i class="fas fa-lock"></i> Child‑Resistant</div><div class="trust-badge"><i class="fas fa-star"></i> ★ 4.9 (500+ reviews)</div></div><a href="#quote" class="btn-primary"><i class="fas fa-cogs"></i> Get Your Quote →</a></div><div class="hero-image"><img src="https://images.pexels.com/photos/461428/coffee-bag-coffee-beans-coffee-package-461428.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Premium mylar bag"></div></div></section>
+  <main>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge"><i class="fas fa-shield-alt"></i> USA Compliant & Wholesale Pricing</div>
+          <h1>Premium Custom Mylar Bags <br>At Factory‑Direct Prices</h1>
+          <p>Hiigene Packaging Solutions bridges your business with top-tier global manufacturing partners. Get superior custom mylar bags for food, fresh fruits & cannabis — save 30-40% without compromising quality. Your source, our confidentiality.</p>
+          <div class="trust-badges" style="justify-content: flex-start;">
+            <div class="trust-badge"><i class="fas fa-certificate"></i> ISO 9001</div>
+            <div class="trust-badge"><i class="fas fa-apple-alt"></i> Food Grade</div>
+            <div class="trust-badge"><i class="fas fa-lock"></i> Child‑Resistant</div>
+          </div>
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px;">
+            <a href="#quote" class="btn-primary"><i class="fas fa-cogs"></i> Get Your Quote →</a>
+            <a href="#products" class="btn-outline"><i class="fas fa-bag-shopping"></i> Explore Solutions</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat-item"><h3>500+</h3><p>B2B Partners</p></div>
+            <div class="stat-item"><h3>50+</h3><p>Supply Partners</p></div>
+            <div class="stat-item"><h3>12M+</h3><p>Bags Delivered</p></div>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://images.pexels.com/photos/461428/coffee-bag-coffee-beans-coffee-package-461428.jpeg?auto=compress&cs=tinysrgb&w=600&h=400&fit=crop" alt="Premium mylar bag">
+        </div>
+      </div>
+    </section>
 
-<!-- Trusted brands strip -->
-<section><div class="container"><div style="text-align: center;"><img src="final strains.png" alt="Trusted brands" style="max-width: 100%; border-radius: 28px;"></div></div></section>
+    <!-- Product Showcase (inspired by oxopackaging.com) -->
+    <section id="products">
+      <div class="container">
+        <h2 class="section-title text-center">Complete packaging solutions</h2>
+        <p class="section-sub text-center">From stand-up pouches to child-resistant exit bags — we deliver premium mylar packaging tailored to your industry.</p>
+        <div class="cards-grid">
+          <div class="service-card"><i class="fas fa-apple-alt"></i><h3>Food & Snacks</h3><p>Oxygen barrier, resealable zippers, custom print for coffee, nuts, dried fruits, and more.</p></div>
+          <div class="service-card"><i class="fas fa-fruit-apple"></i><h3>Fruit Preservation</h3><p>High-barrier fruit pouches, breathable micro-perforation options, extended shelf life for fresh produce.</p></div>
+          <div class="service-card"><i class="fas fa-leaf"></i><h3>Cannabis Packaging</h3><p>Child-resistant, smell-proof, UV-resistant mylar bags. Fully compliant with state regulations, custom sizes & branding.</p></div>
+          <div class="service-card"><i class="fas fa-palette"></i><h3>Full Customization</h3><p>Matte/gloss finish, full-color digital printing, low MOQ supported — from concept to mass production.</p></div>
+        </div>
+      </div>
+    </section>
 
-<!-- Material construction -->
-<section><div class="container"><div class="feature-grid"><div><img src="mylar layers.png" alt="Mylar layer structure"></div><div><h3><i class="fas fa-layer-group"></i> Premium material construction</h3><p>High‑barrier PET/AL/PE layers block oxygen, moisture, and light.</p></div></div></div></section>
+    <!-- Trusted brands strip -->
+    <section style="background: #fefcf7;">
+      <div class="container">
+        <div style="text-align: center;">
+          <p style="font-weight: 600; margin-bottom: 20px;">Trusted by top cannabis & food brands</p>
+          <img src="final strains.png" alt="Trusted brands collage" style="max-width: 100%; border-radius: 28px;">
+        </div>
+      </div>
+    </section>
 
-<!-- Gallery of packaging varieties -->
-<section id="packaging"><div class="container"><h2 class="section-title">Complete packaging solutions</h2><div class="image-gallery"><div class="gallery-item"><img src="variety2.png" alt="Variety"><p>Multiple styles</p></div><div class="gallery-item"><img src="50bag.jpg" alt="50g"><p>50g / 1.76oz</p></div><div class="gallery-item"><img src="strains.png" alt="Strains"><p>Strain labels</p></div><div class="gallery-item"><img src="image_33015bfc.png" alt="Premium"><p>High‑barrier</p></div><div class="gallery-item"><img src="image.png" alt="Strain gallery"><p>Custom strain designs</p></div></div></div></section>
+    <!-- Premium material construction -->
+    <section>
+      <div class="container">
+        <div class="feature-grid">
+          <div><img src="mylar layers.png" alt="Mylar layer structure"></div>
+          <div>
+            <h3><i class="fas fa-layer-group"></i> Premium material construction</h3>
+            <p>Every bag is engineered for maximum protection:</p>
+            <ul style="margin-left: 20px; margin-top: 12px;">
+              <li><strong>Matte Charcoal PET</strong> – dimensional stability, soft‑touch finish, high‑resolution print surface.</li>
+              <li><strong>High‑Barrier Aluminum Foil Core</strong> – blocks oxygen, moisture, light, and gases.</li>
+              <li><strong>Transparent Inner Sealant (PP/PE)</strong> – heat‑sealable, food‑contact safe, laminated for stability.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Child-Resistant Seal -->
-<section id="sourcing"><div class="container"><div class="feature-grid" style="direction: rtl;"><div><img src="mylar seal.png" alt="Child resistant seal"></div><div style="direction: ltr;"><h3><i class="fas fa-lock"></i> Child‑Resistant Integrity System</h3><p>Press‑and‑pull zipper certified to 16 CFR 1700. Senior‑friendly, smell‑proof.</p><a href="#quote" class="btn-outline">Add CRIS to your order →</a></div></div></div></section>
+    <!-- Gallery of packaging varieties (inspired by oxopackaging.com) -->
+    <section style="background: #fbfef9;">
+      <div class="container">
+        <h2 class="section-title text-center">Packaging varieties & strain‑specific designs</h2>
+        <div class="image-gallery">
+          <div class="gallery-item"><img src="variety2.png" alt="Variety of mylar bags"><p>Multiple bag styles</p></div>
+          <div class="gallery-item"><img src="50bag.jpg" alt="50g mylar bag example"><p>50g / 1.76oz size</p></div>
+          <div class="gallery-item"><img src="strains.png" alt="Cannabis strain labels"><p>Strain-specific branding</p></div>
+          <div class="gallery-item"><img src="image_33015bfc.png" alt="Cannabis mylar bag"><p>Premium mylar finish</p></div>
+          <div class="gallery-item"><img src="image.png" alt="Strain labels gallery"><p>Custom strain designs</p></div>
+        </div>
+      </div>
+    </section>
 
-<!-- Size guide -->
-<section><div class="container"><div class="feature-grid"><div><img src="mylar sizes.png" alt="Size chart"></div><div><h3>Common pouch sizes (grams to ounces)</h3><ul><li>1g (0.035oz) – Sample</li><li>3.5g (1/8 oz) – Most popular</li><li>7g, 14g, 28g, 50g</li><li>Custom dimensions available</li></ul></div></div></div></section>
+    <!-- Child-Resistant Integrity System -->
+    <section id="sourcing">
+      <div class="container">
+        <div class="feature-grid" style="direction: rtl;">
+          <div><img src="mylar seal.png" alt="Child Resistant Integrity System"></div>
+          <div style="direction: ltr;">
+            <h3><i class="fas fa-lock"></i> Child‑Resistant Integrity System (CRIS)</h3>
+            <p>Our patented press‑and‑pull zipper technology meets the highest safety standards.</p>
+            <ul style="margin-left: 20px; margin-top: 12px;">
+              <li>✅ Certified child‑resistant (16 CFR 1700)</li>
+              <li>✅ Senior‑friendly & easy to open for adults</li>
+              <li>✅ Tamper‑evident & smell‑proof seal</li>
+            </ul>
+            <a href="#quote" class="btn-outline" style="margin-top: 16px; display: inline-block;">Add CRIS to your order →</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<!-- Quote Builder (full manufacturer-ready form) -->
-<section id="quote"><div class="container"><h2 class="section-title">Design your custom mylar bags</h2><p class="section-sub">Fill in the exact specifications our manufacturing partners need. We’ll forward your order and reply with a quote within 12 hours.</p><div class="spec-builder"><div id="form-error-summary" class="error-summary"></div>
-<form action="https://formsubmit.co/cannalock.procurement@protonmail.com" method="POST" id="quoteForm">
-  <input type="hidden" name="_subject" value="New Custom Packaging Order - Ready for Manufacturer">
-  <input type="hidden" name="_captcha" value="false">
-  <input type="hidden" name="_autoresponse" value="Thank you! We'll forward your specs to our manufacturing partner and reply with a quote within 12 hours. - CannaLock Packaging Global">
-  <input type="hidden" name="_next" value="https://Cannalock-packaging.github.io/-cannalock-website/thankyou.html">
-  <input type="hidden" name="_template" value="table">
+    <!-- Size guide -->
+    <section>
+      <div class="container">
+        <div class="feature-grid">
+          <div><img src="mylar sizes.png" alt="Mylar bag size chart"></div>
+          <div>
+            <h3><i class="fas fa-chart-line"></i> Common pouch sizes (grams to ounces)</h3>
+            <ul style="margin-left: 20px; margin-top: 12px;">
+              <li>1g (0.035oz) – Sample / single serving</li>
+              <li>3.5g (1/8 oz) – Most popular for cannabis flower</li>
+              <li>7g (1/4 oz) – Standard “quarter”</li>
+              <li>14g (1/2 oz) – Bulk personal use</li>
+              <li>28g (1 oz) – Maximum retail size</li>
+              <li>50g (1.76 oz) – Food & snack size</li>
+              <li>Custom – Tell us your exact dimensions</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <div class="builder-step"><h3><i class="fas fa-layer-group"></i> 1. Material & Thickness</h3><div class="option-group" id="thickness-group"><div class="option-card" data-value="3mil (75µ) PET/AL/PE">3mil (75µ)</div><div class="option-card" data-value="4mil (100µ) PET/AL/PE">4mil (100µ) <span class="most-ordered">most ordered</span></div><div class="option-card" data-value="5mil (125µ) PET/AL/PE">5mil (125µ)</div><div class="option-card" data-value="6mil (150µ) PET/AL/PE">6mil (150µ)</div></div><input type="hidden" name="Material_Thickness" id="material" required></div>
+    <!-- Quote Builder (manufacturer-ready form) -->
+    <section id="quote">
+      <div class="container">
+        <h2 class="section-title text-center">Design your custom mylar bags</h2>
+        <p class="section-sub text-center">Fill in the exact specifications our manufacturing partners need. We’ll forward your order and reply with a quote within 12 hours.</p>
+        <div class="spec-builder">
+          <div id="form-error-summary" class="error-summary"></div>
+          <form action="https://formsubmit.co/hiigene@protonmail.com" method="POST" id="quoteForm">
+            <input type="hidden" name="_subject" value="New Custom Packaging Order - Hiigene Procurement">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_autoresponse" value="Thank you! We'll forward your specs to our manufacturing partner and reply with a quote within 12 hours. - Hiigene Packaging Solutions">
+            <input type="hidden" name="_next" value="https://Cannalock-packaging.github.io/-cannalock-website/thankyou.html">
+            <input type="hidden" name="_template" value="table">
 
-  <div class="builder-step"><h3><i class="fas fa-bag-shopping"></i> 2. Bag Type</h3><div class="option-group" id="bagtype-group"><div class="option-card" data-value="Stand-up pouch">Stand-up pouch</div><div class="option-card" data-value="Flat bottom gusset">Flat bottom gusset</div><div class="option-card" data-value="Flat seal (3 sides)">Flat seal (3 sides)</div><div class="option-card" data-value="Side gusseted">Side gusseted</div></div><input type="hidden" name="Bag_Type" id="bagtype" required></div>
+            <div class="builder-step"><h3><i class="fas fa-layer-group"></i> 1. Material & Thickness</h3><div class="option-group" id="thickness-group"><div class="option-card" data-value="3mil (75µ) PET/AL/PE">3mil (75µ)</div><div class="option-card" data-value="4mil (100µ) PET/AL/PE">4mil (100µ) <span class="most-ordered">most ordered</span></div><div class="option-card" data-value="5mil (125µ) PET/AL/PE">5mil (125µ)</div><div class="option-card" data-value="6mil (150µ) PET/AL/PE">6mil (150µ)</div></div><input type="hidden" name="Material_Thickness" id="material" required></div>
 
-  <div class="builder-step"><h3><i class="fas fa-ruler-combined"></i> 3. Bag Dimensions</h3><div class="form-grid" style="grid-template-columns:1fr 1fr 1fr;"><input type="text" name="Width" id="width" placeholder="Width (e.g., 5\")" required><input type="text" name="Height" id="height" placeholder="Height (e.g., 7\")" required><input type="text" name="Gusset" id="gusset" placeholder="Gusset (e.g., 2\")"></div></div>
+            <div class="builder-step"><h3><i class="fas fa-bag-shopping"></i> 2. Bag Type</h3><div class="option-group" id="bagtype-group"><div class="option-card" data-value="Stand-up pouch">Stand-up pouch</div><div class="option-card" data-value="Flat bottom gusset">Flat bottom gusset</div><div class="option-card" data-value="Flat seal (3 sides)">Flat seal (3 sides)</div><div class="option-card" data-value="Side gusseted">Side gusseted</div></div><input type="hidden" name="Bag_Type" id="bagtype" required></div>
 
-  <div class="builder-step"><h3><i class="fas fa-print"></i> 4. Printing</h3><div class="option-group" id="print-group"><div class="option-card" data-value="No printing">No printing</div><div class="option-card" data-value="1-2 spot colors (Pantone)">1-2 spot colors</div><div class="option-card" data-value="Full color CMYK">Full color CMYK</div></div><input type="hidden" name="Printing_Type" id="printtype" required><input type="text" name="Print_Colors" placeholder="Number of colors / details" style="margin-top: 12px;"><input type="text" name="Design_File_Format" placeholder="Design file format (AI, PDF, CDR)" style="margin-top: 8px;"></div>
+            <div class="builder-step"><h3><i class="fas fa-ruler-combined"></i> 3. Bag Dimensions</h3><div class="form-grid" style="grid-template-columns:1fr 1fr 1fr;"><input type="text" name="Width" id="width" placeholder="Width (e.g., 5\")" required><input type="text" name="Height" id="height" placeholder="Height (e.g., 7\")" required><input type="text" name="Gusset" id="gusset" placeholder="Gusset (e.g., 2\")"></div></div>
 
-  <div class="builder-step"><h3><i class="fas fa-lock"></i> 5. Closure</h3><div class="option-group" id="closure-group"><div class="option-card" data-value="Resealable zipper">Resealable zipper</div><div class="option-card" data-value="Child-resistant zipper (CR)">Child‑Resistant zipper</div><div class="option-card" data-value="Tear notch">Tear notch</div><div class="option-card" data-value="Heat seal">Heat seal</div></div><input type="hidden" name="Closure" id="closure" required></div>
+            <div class="builder-step"><h3><i class="fas fa-print"></i> 4. Printing</h3><div class="option-group" id="print-group"><div class="option-card" data-value="No printing">No printing</div><div class="option-card" data-value="1-2 spot colors (Pantone)">1-2 spot colors</div><div class="option-card" data-value="Full color CMYK">Full color CMYK</div></div><input type="hidden" name="Printing_Type" id="printtype" required><input type="text" name="Print_Colors" placeholder="Number of colors / details" style="margin-top: 12px;"><input type="text" name="Design_File_Format" placeholder="Design file format (AI, PDF, CDR)" style="margin-top: 8px;"></div>
 
-  <div class="builder-step"><h3><i class="fas fa-weight-hanging"></i> 6. Fill Size Reference</h3><div class="size-grid" id="size-grid"><div class="size-card" data-size="1g">1g</div><div class="size-card" data-size="3.5g (1/8 oz)">3.5g</div><div class="size-card" data-size="7g">7g</div><div class="size-card" data-size="14g">14g</div><div class="size-card" data-size="28g">28g</div><div class="size-card" data-size="50g">50g</div><div class="size-card" data-size="Custom">Custom</div></div><input type="hidden" name="Fill_Size" id="fillSize"><div id="customFillDiv" style="display:none; margin-top:12px;"><input type="text" id="customFill" placeholder="Enter custom fill size"></div></div>
+            <div class="builder-step"><h3><i class="fas fa-lock"></i> 5. Closure</h3><div class="option-group" id="closure-group"><div class="option-card" data-value="Resealable zipper">Resealable zipper</div><div class="option-card" data-value="Child-resistant zipper (CR)">Child‑Resistant zipper</div><div class="option-card" data-value="Tear notch">Tear notch</div><div class="option-card" data-value="Heat seal">Heat seal</div></div><input type="hidden" name="Closure" id="closure" required></div>
 
-  <div class="builder-step"><h3><i class="fas fa-chart-line"></i> 7. Quantity & MOQ</h3><div class="form-grid" style="grid-template-columns:1fr 1fr;"><input type="number" name="Exact_Quantity" id="exactQty" placeholder="Exact quantity" required><select name="MOQ" id="moq"><option value="">Minimum order quantity</option><option>1,000 - 2,999</option><option>3,000 - 4,999</option><option>5,000 - 9,999</option><option>10,000+</option></select></div></div>
+            <div class="builder-step"><h3><i class="fas fa-weight-hanging"></i> 6. Fill Size Reference</h3><div class="size-grid" id="size-grid"><div class="size-card" data-size="1g">1g</div><div class="size-card" data-size="3.5g (1/8 oz)">3.5g</div><div class="size-card" data-size="7g">7g</div><div class="size-card" data-size="14g">14g</div><div class="size-card" data-size="28g">28g</div><div class="size-card" data-size="50g">50g</div><div class="size-card" data-size="Custom">Custom</div></div><input type="hidden" name="Fill_Size" id="fillSize"><div id="customFillDiv" style="display:none; margin-top:12px;"><input type="text" id="customFill" placeholder="Enter custom fill size"></div></div>
 
-  <div class="builder-step"><h3><i class="fas fa-plus-circle"></i> 8. Add-ons</h3><div class="option-group" id="addons-group"><div class="option-card" data-value="Hang hole">Hang hole</div><div class="option-card" data-value="Euro slot">Euro slot</div><div class="option-card" data-value="Clear window">Clear window</div><div class="option-card" data-value="Smell-proof layer">Smell‑proof</div><div class="option-card" data-value="Matte finish">Matte finish</div></div><input type="hidden" name="Addons" id="addons"><p>Selected: <span id="addons-selected">none</span></p></div>
+            <div class="builder-step"><h3><i class="fas fa-chart-line"></i> 7. Quantity & MOQ</h3><div class="form-grid" style="grid-template-columns:1fr 1fr;"><input type="number" name="Exact_Quantity" id="exactQty" placeholder="Exact quantity" required><select name="MOQ" id="moq"><option value="">Minimum order quantity</option><option>1,000 - 2,999</option><option>3,000 - 4,999</option><option>5,000 - 9,999</option><option>10,000+</option></select></div></div>
 
-  <div class="builder-step"><h3><i class="fas fa-shipping-fast"></i> 9. Packaging & Delivery</h3><input type="text" name="Inner_Packaging" placeholder="Inner packaging (e.g., 100 bags/carton)"><input type="text" name="Destination_Port" placeholder="Destination port / city" style="margin-top:12px;" required><select name="Shipping_Terms" style="margin-top:12px;"><option value="">Shipping terms</option><option>EXW</option><option>FOB</option><option>CIF</option><option>DDP</option></select></div>
+            <div class="builder-step"><h3><i class="fas fa-plus-circle"></i> 8. Add-ons</h3><div class="option-group" id="addons-group"><div class="option-card" data-value="Hang hole">Hang hole</div><div class="option-card" data-value="Euro slot">Euro slot</div><div class="option-card" data-value="Clear window">Clear window</div><div class="option-card" data-value="Smell-proof layer">Smell‑proof</div><div class="option-card" data-value="Matte finish">Matte finish</div></div><input type="hidden" name="Addons" id="addons"><p>Selected: <span id="addons-selected">none</span></p></div>
 
-  <div class="builder-step"><h3><i class="fas fa-pen-alt"></i> 10. Special Instructions</h3><textarea name="Special_Instructions" rows="3" placeholder="Artwork notes, certifications, etc."></textarea></div>
+            <div class="builder-step"><h3><i class="fas fa-shipping-fast"></i> 9. Packaging & Delivery</h3><input type="text" name="Inner_Packaging" placeholder="Inner packaging (e.g., 100 bags/carton)"><input type="text" name="Destination_Port" placeholder="Destination port / city" style="margin-top:12px;" required><select name="Shipping_Terms" style="margin-top:12px;"><option value="">Shipping terms</option><option>EXW</option><option>FOB</option><option>CIF</option><option>DDP</option></select></div>
 
-  <!-- Summary table -->
-  <div class="summary-box"><strong>📋 Order Summary (for manufacturer)</strong><table class="spec-table"><tr><td>Material</td><td id="sum-material">—</td></tr><tr><td>Bag Type</td><td id="sum-bagtype">—</td></tr><tr><td>Dimensions</td><td id="sum-dimensions">—</td></tr><tr><td>Printing</td><td id="sum-printing">—</td></tr><tr><td>Closure</td><td id="sum-closure">—</td></tr><tr><td>Fill Size</td><td id="sum-fillsize">—</td></tr><tr><td>Quantity / MOQ</td><td id="sum-qty">—</td></tr><tr><td>Add-ons</td><td id="sum-addons">—</td></tr><tr><td>Destination</td><td id="sum-shipping">—</td></tr></table></div>
+            <div class="builder-step"><h3><i class="fas fa-pen-alt"></i> 10. Special Instructions</h3><textarea name="Special_Instructions" rows="3" placeholder="Artwork notes, certifications, etc."></textarea></div>
 
-  <div class="guarantee" style="background:#f0f9f0; border-radius:24px; padding:20px; text-align:center; margin:20px 0;"><i class="fas fa-medal" style="color:var(--accent-gold); font-size:2rem;"></i><br><strong>100% Satisfaction Guarantee</strong><br>We work with you and the factory to ensure perfect quality.</div>
+            <div class="summary-box"><strong>📋 Order Summary (for manufacturer)</strong><table class="spec-table"><tr><td>Material</td><td id="sum-material">—</td></tr><tr><td>Bag Type</td><td id="sum-bagtype">—</td></tr><tr><td>Dimensions</td><td id="sum-dimensions">—</td></tr><tr><td>Printing</td><td id="sum-printing">—</td></tr><tr><td>Closure</td><td id="sum-closure">—</td></tr><tr><td>Fill Size</td><td id="sum-fillsize">—</td></tr><tr><td>Quantity / MOQ</td><td id="sum-qty">—</td></tr><tr><td>Add-ons</td><td id="sum-addons">—</td></tr><tr><td>Destination</td><td id="sum-shipping">—</td></tr></table></div>
 
-  <h3>Your contact information</h3><div class="form-grid"><input type="text" name="Full_Name" id="name" placeholder="Full name *" required><input type="email" name="Email" id="email" placeholder="Business email *" required><input type="text" name="Company" placeholder="Company name"><input type="text" name="Phone" placeholder="Phone number"></div>
+            <div class="guarantee" style="background:#f0f9f0; border-radius:24px; padding:20px; text-align:center; margin:20px 0;"><i class="fas fa-medal" style="color:var(--accent-gold); font-size:2rem;"></i><br><strong>100% Satisfaction Guarantee</strong><br>We work with you and the factory to ensure perfect quality.</div>
 
-  <div class="text-center mt-4"><button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Submit Order Specs → Forward to Manufacturer</button></div>
-  <p class="text-center" style="margin-top:16px; font-size:0.8rem;"><i class="fas fa-lock"></i> Your specifications are confidential. We only share with your approved manufacturer.</p>
-</form></div></div></section>
+            <h3>Your contact information</h3><div class="form-grid"><input type="text" name="Full_Name" id="name" placeholder="Full name *" required><input type="email" name="Email" id="email" placeholder="Business email *" required><input type="text" name="Company" placeholder="Company name"><input type="text" name="Phone" placeholder="Phone number"></div>
 
-<footer class="footer"><div class="container"><div class="footer-grid"><div><h3>CannaLock Packaging Global</h3><p><i class="fas fa-envelope"></i> cannalock.procurement@protonmail.com<br><i class="fas fa-phone"></i> +1 (876) 347-2295</p></div><div><h4>Quick links</h4><p><a href="#home" style="color:#bdd4b5;">Home</a><br><a href="#packaging" style="color:#bdd4b5;">Packaging</a><br><a href="#sourcing" style="color:#bdd4b5;">Sourcing</a><br><a href="#quote" style="color:#bdd4b5;">Quote Builder</a></p></div></div><hr style="margin:20px 0;"><p style="text-align:center;">© 2025 CannaLock Packaging Global – Confidential supply chain</p></div></footer>
+            <div class="text-center mt-4"><button type="submit" class="btn-primary"><i class="fas fa-paper-plane"></i> Submit Order Specs → Forward to Manufacturer</button></div>
+            <p class="text-center" style="margin-top:16px; font-size:0.8rem;"><i class="fas fa-lock"></i> Your specifications are confidential.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
 
-<script>
-  // Option groups
-  function setupGroup(groupId, hiddenId, sumId) {
-    const opts = document.querySelectorAll(`#${groupId} .option-card`);
-    const hidden = document.getElementById(hiddenId);
-    const sumSpan = document.getElementById(sumId);
-    opts.forEach(opt => {
-      opt.addEventListener('click', () => {
-        opts.forEach(o => o.classList.remove('selected'));
-        opt.classList.add('selected');
-        const val = opt.getAttribute('data-value');
-        if (hidden) hidden.value = val;
-        if (sumSpan) sumSpan.innerText = val;
-        updateSummary();
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3 style="color: white; margin-bottom: 16px;">Hiigene Packaging Solutions</h3>
+          <p><i class="fas fa-envelope"></i> hiigene@protonmail.com</p>
+          <p><i class="fas fa-phone-alt"></i> +1 (876) 347-2295</p>
+        </div>
+        <div>
+          <h4 style="color: white;">Quick links</h4>
+          <p><a href="#home" style="color: #bdd4b5; text-decoration: none;">Home</a></p>
+          <p><a href="#products" style="color: #bdd4b5; text-decoration: none;">Solutions</a></p>
+          <p><a href="#sourcing" style="color: #bdd4b5; text-decoration: none;">Sourcing</a></p>
+          <p><a href="#quote" style="color: #bdd4b5; text-decoration: none;">Quote Builder</a></p>
+        </div>
+        <div>
+          <h4 style="color: white;">Certifications</h4>
+          <p>✅ FDA compliant</p>
+          <p>✅ ISO 9001</p>
+          <p>✅ Child‑Resistant (CR)</p>
+        </div>
+      </div>
+      <hr style="border-color: #2a3a2a; margin: 24px 0;">
+      <p style="text-align: center; font-size: 0.85rem;">© 2025 Hiigene Packaging Solutions — B2B Packaging Sourcing Partner. Confidential supply chain.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Option groups, size grid, add-ons, etc.
+    function setupOptionGroup(groupId, hiddenInputId, summarySpanId) {
+      const options = document.querySelectorAll(`#${groupId} .option-card`);
+      const hiddenInput = document.getElementById(hiddenInputId);
+      const summarySpan = document.getElementById(summarySpanId);
+      options.forEach(opt => {
+        opt.addEventListener('click', () => {
+          options.forEach(o => o.classList.remove('selected'));
+          opt.classList.add('selected');
+          const value = opt.getAttribute('data-value');
+          hiddenInput.value = value;
+          if (summarySpan) summarySpan.innerText = value;
+          updateSummary();
+        });
       });
-    });
-  }
+    }
 
-  // Fill size
-  const sizeCards = document.querySelectorAll('#size-grid .size-card');
-  const fillHidden = document.getElementById('fillSize');
-  const customFillDiv = document.getElementById('customFillDiv');
-  const customFillInput = document.getElementById('customFill');
-  sizeCards.forEach(card => {
-    card.addEventListener('click', () => {
+    const sizeCards = document.querySelectorAll('#size-grid .size-card');
+    const fillHidden = document.getElementById('fillSize');
+    const customFillDiv = document.getElementById('customFillDiv');
+    const customFillInput = document.getElementById('customFill');
+    function handleSizeSelection(selectedCard) {
       sizeCards.forEach(c => c.classList.remove('selected'));
-      card.classList.add('selected');
-      let val = card.getAttribute('data-size');
-      if (val === 'Custom') {
+      selectedCard.classList.add('selected');
+      const sizeValue = selectedCard.getAttribute('data-size');
+      fillHidden.value = sizeValue;
+      if (sizeValue === 'Custom') {
         customFillDiv.style.display = 'block';
+        customFillInput.required = true;
         fillHidden.value = 'Custom: ' + (customFillInput.value || '');
       } else {
         customFillDiv.style.display = 'none';
-        fillHidden.value = val;
+        if (customFillInput) customFillInput.required = false;
       }
       updateSummary();
-    });
-  });
-  if (customFillInput) {
-    customFillInput.addEventListener('input', () => {
-      if (fillHidden.value.startsWith('Custom:')) {
-        fillHidden.value = 'Custom: ' + customFillInput.value;
-        updateSummary();
-      }
-    });
-  }
-
-  // Add-ons multi-select
-  const addonsMap = new Map();
-  const addonOptions = document.querySelectorAll('#addons-group .option-card');
-  const addonsHidden = document.getElementById('addons');
-  const addonsSpan = document.getElementById('addons-selected');
-  addonOptions.forEach(opt => {
-    opt.addEventListener('click', () => {
-      const val = opt.getAttribute('data-value');
-      if (addonsMap.has(val)) { addonsMap.delete(val); opt.classList.remove('selected'); }
-      else { addonsMap.set(val, true); opt.classList.add('selected'); }
-      const selected = Array.from(addonsMap.keys());
-      addonsHidden.value = selected.join(', ');
-      addonsSpan.innerText = selected.join(', ') || 'none';
-      updateSummary();
-    });
-  });
-
-  function updateSummary() {
-    document.getElementById('sum-material').innerText = document.getElementById('material')?.value || '—';
-    document.getElementById('sum-bagtype').innerText = document.getElementById('bagtype')?.value || '—';
-    const w = document.getElementById('width')?.value || '';
-    const h = document.getElementById('height')?.value || '';
-    const g = document.getElementById('gusset')?.value || '';
-    document.getElementById('sum-dimensions').innerText = `${w} x ${h}${g ? ' (gusset '+g+')' : ''}`;
-    const print = document.getElementById('printtype')?.value || '—';
-    const colors = document.querySelector('input[name="Print_Colors"]')?.value;
-    document.getElementById('sum-printing').innerText = print + (colors ? ` (${colors})` : '');
-    document.getElementById('sum-closure').innerText = document.getElementById('closure')?.value || '—';
-    document.getElementById('sum-fillsize').innerText = fillHidden.value || '—';
-    const qty = document.getElementById('exactQty')?.value || '';
-    const moq = document.getElementById('moq')?.options[document.getElementById('moq').selectedIndex]?.text || '';
-    document.getElementById('sum-qty').innerText = `${qty}${moq ? ' (MOQ: '+moq+')' : ''}`;
-    const addonsArr = Array.from(addonsMap.keys());
-    document.getElementById('sum-addons').innerText = addonsArr.join(', ') || '—';
-    const dest = document.querySelector('input[name="Destination_Port"]')?.value || '';
-    const ship = document.querySelector('select[name="Shipping_Terms"]')?.value || '';
-    document.getElementById('sum-shipping').innerText = `${dest} ${ship}`.trim() || '—';
-  }
-
-  // Event listeners for real-time update
-  document.getElementById('width')?.addEventListener('input', updateSummary);
-  document.getElementById('height')?.addEventListener('input', updateSummary);
-  document.getElementById('gusset')?.addEventListener('input', updateSummary);
-  document.getElementById('exactQty')?.addEventListener('input', updateSummary);
-  document.getElementById('moq')?.addEventListener('change', updateSummary);
-  document.querySelector('input[name="Destination_Port"]')?.addEventListener('input', updateSummary);
-  document.querySelector('select[name="Shipping_Terms"]')?.addEventListener('change', updateSummary);
-  document.querySelector('input[name="Print_Colors"]')?.addEventListener('input', updateSummary);
-
-  setupGroup('thickness-group', 'material', 'sum-material');
-  setupGroup('bagtype-group', 'bagtype', 'sum-bagtype');
-  setupGroup('print-group', 'printtype', null);
-  setupGroup('closure-group', 'closure', 'sum-closure');
-
-  // Form validation
-  const form = document.getElementById('quoteForm');
-  const errorDiv = document.getElementById('form-error-summary');
-  form.addEventListener('submit', (e) => {
-    let errors = [];
-    if (!document.getElementById('material')?.value) errors.push('Material & thickness');
-    if (!document.getElementById('bagtype')?.value) errors.push('Bag type');
-    if (!document.getElementById('width')?.value || !document.getElementById('height')?.value) errors.push('Dimensions (width & height)');
-    if (!document.getElementById('printtype')?.value && !document.querySelector('input[name="Design_File_Format"]')?.value) errors.push('Printing type or design file');
-    if (!document.getElementById('closure')?.value) errors.push('Closure type');
-    if (!document.getElementById('exactQty')?.value) errors.push('Exact quantity');
-    if (!document.getElementById('name')?.value.trim()) errors.push('Full name');
-    const email = document.getElementById('email')?.value;
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Valid business email');
-    if (errors.length) {
-      e.preventDefault();
-      errorDiv.style.display = 'block';
-      errorDiv.innerHTML = `<strong>⚠️ Missing information for manufacturer:</strong><ul>${errors.map(e => `<li>${e}</li>`).join('')}</ul>`;
-      errorDiv.scrollIntoView({ behavior: 'smooth' });
-    } else {
-      errorDiv.style.display = 'none';
     }
-  });
-
-  // Smooth scroll for anchor links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      const target = this.getAttribute('href');
-      if (target === "#" || target === "") return;
-      const el = document.querySelector(target);
-      if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth' }); }
+    sizeCards.forEach(card => {
+      card.addEventListener('click', () => handleSizeSelection(card));
     });
-  });
-</script>
+    if (customFillInput) {
+      customFillInput.addEventListener('input', () => {
+        if (fillHidden.value.startsWith('Custom:')) {
+          fillHidden.value = 'Custom: ' + customFillInput.value;
+          updateSummary();
+        }
+      });
+    }
+
+    const addonsMap = new Map();
+    function setupAddons() {
+      const addonOptions = document.querySelectorAll('#addons-group .option-card');
+      const addonsHidden = document.getElementById('addons');
+      const addonsSpan = document.getElementById('addons-selected');
+      addonOptions.forEach(opt => {
+        opt.addEventListener('click', () => {
+          const val = opt.getAttribute('data-value');
+          if (addonsMap.has(val)) { addonsMap.delete(val); opt.classList.remove('selected'); }
+          else { addonsMap.set(val, true); opt.classList.add('selected'); }
+          const selected = Array.from(addonsMap.keys());
+          addonsHidden.value = selected.join(', ');
+          addonsSpan.innerText = selected.join(', ') || 'none';
+          updateSummary();
+        });
+      });
+    }
+
+    function updateSummary() {
+      document.getElementById('sum-material').innerText = document.getElementById('material')?.value || '—';
+      document.getElementById('sum-bagtype').innerText = document.getElementById('bagtype')?.value || '—';
+      const w = document.getElementById('width')?.value || '';
+      const h = document.getElementById('height')?.value || '';
+      const g = document.getElementById('gusset')?.value || '';
+      document.getElementById('sum-dimensions').innerText = `${w} x ${h}${g ? ' (gusset '+g+')' : ''}`;
+      const print = document.getElementById('printtype')?.value || '—';
+      const colors = document.querySelector('input[name="Print_Colors"]')?.value;
+      document.getElementById('sum-printing').innerText = print + (colors ? ` (${colors})` : '');
+      document.getElementById('sum-closure').innerText = document.getElementById('closure')?.value || '—';
+      document.getElementById('sum-fillsize').innerText = fillHidden.value || '—';
+      const qty = document.getElementById('exactQty')?.value || '';
+      const moq = document.getElementById('moq')?.options[document.getElementById('moq').selectedIndex]?.text || '';
+      document.getElementById('sum-qty').innerText = `${qty}${moq ? ' (MOQ: '+moq+')' : ''}`;
+      const addonsArr = Array.from(addonsMap.keys());
+      document.getElementById('sum-addons').innerText = addonsArr.join(', ') || '—';
+      const dest = document.querySelector('input[name="Destination_Port"]')?.value || '';
+      const ship = document.querySelector('select[name="Shipping_Terms"]')?.value || '';
+      document.getElementById('sum-shipping').innerText = `${dest} ${ship}`.trim() || '—';
+    }
+
+    document.getElementById('width')?.addEventListener('input', updateSummary);
+    document.getElementById('height')?.addEventListener('input', updateSummary);
+    document.getElementById('gusset')?.addEventListener('input', updateSummary);
+    document.getElementById('exactQty')?.addEventListener('input', updateSummary);
+    document.getElementById('moq')?.addEventListener('change', updateSummary);
+    document.querySelector('input[name="Destination_Port"]')?.addEventListener('input', updateSummary);
+    document.querySelector('select[name="Shipping_Terms"]')?.addEventListener('change', updateSummary);
+    document.querySelector('input[name="Print_Colors"]')?.addEventListener('input', updateSummary);
+
+    setupOptionGroup('thickness-group', 'material', 'sum-material');
+    setupOptionGroup('bagtype-group', 'bagtype', 'sum-bagtype');
+    setupOptionGroup('print-group', 'printtype', null);
+    setupOptionGroup('closure-group', 'closure', 'sum-closure');
+    setupAddons();
+    updateSummary();
+
+    // Form validation
+    const form = document.getElementById('quoteForm');
+    const errorDiv = document.getElementById('form-error-summary');
+    form.addEventListener('submit', (e) => {
+      let errors = [];
+      if (!document.getElementById('material')?.value) errors.push('Material & thickness');
+      if (!document.getElementById('bagtype')?.value) errors.push('Bag type');
+      if (!document.getElementById('width')?.value || !document.getElementById('height')?.value) errors.push('Dimensions');
+      if (!document.getElementById('printtype')?.value && !document.querySelector('input[name="Design_File_Format"]')?.value) errors.push('Printing or design file');
+      if (!document.getElementById('closure')?.value) errors.push('Closure type');
+      if (!document.getElementById('exactQty')?.value) errors.push('Exact quantity');
+      if (!document.getElementById('name')?.value.trim()) errors.push('Full name');
+      const email = document.getElementById('email')?.value;
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) errors.push('Valid business email');
+      if (errors.length) {
+        e.preventDefault();
+        errorDiv.style.display = 'block';
+        errorDiv.innerHTML = `<strong>⚠️ Missing information:</strong><ul>${errors.map(e => `<li>${e}</li>`).join('')}</ul>`;
+        errorDiv.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        errorDiv.style.display = 'none';
+      }
+    });
+
+    // Smooth scroll
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = this.getAttribute('href');
+        if (target === "#" || target === "") return;
+        const el = document.querySelector(target);
+        if (el) {
+          e.preventDefault();
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
 </body>
 </html>
